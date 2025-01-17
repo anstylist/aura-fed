@@ -1,34 +1,5 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-:root {
-  --primary-color:#000000  ;
-  --primary60-color: #E4DBD3;
-  --secondary-color: rgb(84, 83, 83);
-  --purple-color: #773875; 
-  --hover-color: #6E2139;
-  --yellow-color: #52B194;
-  --foreground-color:  #5E6E60 ;
-  --foreground-sub-color: #98928E;
-  --body-text-color: #000000;
-  --text-white-color: #fff;
-  --body-background-color: #fff;
-  --bg-offwhite-color: #DEE2DF;
-  --bg-gray-color: #F5F8FF;
-  --bg-black-color: #000000;
-  --bg-light-dark-color: #1a1818;
-  --border-color: #EDEDED;
-  --primary-font: 'Roboto', sans;
-  --secondary-font: 'Be Vietnam Pro', sans;
-  --body-font-size: 1.5rem;
-  --body-font-weight: 400;
-  --body-line-height: 2.6rem;
-  --headings-weight: 700;
-  --transition: all 0.3s ease 0s;
-  --container-fluid-offset: 12rem;
-}
-
 /* Common Style */
 *,
 *::after,
@@ -41,20 +12,11 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  min-height: 100%;
-  margin: 0;
-  font-size: 62.5%;
-  padding: 0;
-}
-
-body {
+body, html {
   font-family: var(--primary-font);
-  font-size: var(--body-font-size, 1.5rem);
   font-weight: var(--body-font-weight);
   font-style: normal;
-  line-height: var(--body-line-height, 26px);
+  line-height: var(--body-line-height);
   position: relative;
   visibility: visible;
   overflow-x: hidden;
@@ -93,21 +55,21 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-weight: var(--headings-weight);
+  font-weight: var(--body-font-weigh);
   margin: 0;
   font-family: var(--primary-font);
 }
 
 h1,
 .h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 3.2rem;
 }
 
 @media only screen and (min-width: 480px) {
   h1,
   .h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     line-height: 3.3rem;
   }
 }
@@ -160,9 +122,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 2rem;
-  line-height: 2.6rem;
-  font-weight: 600;
+  font-size: var(--subtitle-font-size);
 }
 
 @media only screen and (min-width: 576px) {
@@ -184,7 +144,7 @@ h2,
 @media only screen and (min-width: 1200px) {
   h2,
   .h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     line-height: 3.5rem;
   }
 }
@@ -192,7 +152,7 @@ h2,
 @media only screen and (min-width: 1366px) {
   h2,
   .h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 3.5rem;
   }
 }
@@ -807,72 +767,6 @@ select {
   margin-top: 1.2rem;
 }
 
-#scroll__top {
-  position: fixed;
-  bottom: 50px;
-  right: 20px;
-  z-index: 99;
-  outline: none;
-  background-color: var(--secondary-color);
-  color: var(--text-white-color);
-  -webkit-box-shadow: 0 2px 22px rgba(0, 0, 0, 0.16);
-          box-shadow: 0 2px 22px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  line-height: 1;
-  width: 4.3rem;
-  height: 4.3rem;
-  border-radius: 50%;
-  border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#scroll__top:hover {
-  background: var(--primary-color);
-}
-
-@media only screen and (max-width: 991px) {
-  #scroll__top {
-    bottom: 75px;
-  }
-}
-
-#scroll__top.active {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-#scroll__top svg {
-  width: 25px;
-  line-height: 1;
-}
-
-.visually-hidden {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  word-wrap: normal !important;
-}
-
 .width__295 {
   width: 295px;
 }
@@ -1104,21 +998,21 @@ body.overlay__active::before,
 
 /* Section padding */
 .section--padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media only screen and (min-width: 768px) {
   .section--padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .section--padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -3825,7 +3719,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .rating__icon {
-  color: var(--yellow-color);
+  color: var(--au-aqua);
 }
 
 .rating__review--text {
@@ -6210,140 +6104,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-/* 
-    21. Newsletter css 
-*/
-@media only screen and (max-width: 575px) {
-  .newsletter__subscribe {
-    width: 100%;
-  }
-}
-
-.newsletter__subscribe--form {
-  width: 100%;
-  position: relative;
-}
-
-.newsletter__subscribe--form input::-webkit-input-placeholder {
-  color: var(--primary-color);
-}
-
-.newsletter__subscribe--form input::-moz-placeholder {
-  color: var(--primary-color);
-}
-
-.newsletter__subscribe--form input:-ms-input-placeholder {
-  color: var(--primary-color);
-}
-
-.newsletter__subscribe--form input:-moz-placeholder {
-  color: var(--primary-color);
-}
-
-.newsletter__subscribe--input {
-  width: 100%;
-  height: 4.5rem;
-  border: 1px solid transparent;
-  color: var(--primary-color);
-  background: var(--body-background-color);
-  font-weight: 500;
-  border-radius: 5px;
-  padding: 0 105px 0 1.5rem;
-  font-size: 1.4rem;
-}
-
-.newsletter__subscribe--input:focus {
-  border-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-@media only screen and (min-width: 480px) {
-  .newsletter__subscribe--input {
-    height: 4.8rem;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .newsletter__subscribe--input {
-    height: 5rem;
-    padding: 0 115px 0 2rem;
-  }
-}
-
-@media only screen and (min-width: 1366px) {
-  .newsletter__subscribe--input {
-    height: 5.5rem;
-  }
-}
-
-.newsletter__subscribe--button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  border: 0;
-  background: var(--secondary-color);
-  padding: 0 1rem;
-  font-size: 1.4rem;
-  text-transform: capitalize;
-  font-weight: 500;
-  color: var(--text-white-color);
-  border-radius: 5px;
-}
-
-.newsletter__subscribe--button:hover {
-  color: var(--primary-color);
-}
-
-@media only screen and (min-width: 576px) {
-  .newsletter__subscribe--button {
-    padding: 0 1.5rem;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .newsletter__subscribe--button {
-    padding: 0 1.8rem;
-    font-size: 1.5rem;
-  }
-}
-
-.newsletter__subscribe--input.style2 {
-  background: var(--body-background-color);
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 0 114px 0 2rem;
-  height: 5rem;
-}
-
-@media only screen and (min-width: 992px) {
-  .newsletter__subscribe--input.style2 {
-    padding: 0 128px 0 2rem;
-  }
-}
-
-.newsletter__subscribe--button.style2 {
-  background: var(--primary-color);
-}
-
-.newsletter__subscribe--button.style2:hover {
-  background: var(--secondary-color);
-  color: var(--text-white-color);
-}
-
-.footer__newsletter {
-  margin-top: 1.5rem;
-}
-
-.footer__logo--img {
-  height: 70px;
-}
-
-@media only screen and (min-width: 992px) {
-  .footer__newsletter {
-    margin-top: 2rem;
-  }
-}
 
 /*
     home three newsletter css

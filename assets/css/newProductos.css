@@ -1,0 +1,162 @@
+.body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.makeup-card-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.makeup-card-minimal:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.makeup-card-minimal:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title-prod {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-minimal {
+    background-color: #ff4b5c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-minimal:hover {
+    background-color: #ff2a3a;
+    box-shadow: 0 4px 10px rgba(255, 74, 92, 0.5);
+}
+
+.makeup-card-minimal .card-image .product-image {
+    transition: all 0.3s ease; /* Agrega una transición suave */
+}
+
+.makeup-card-minimal:hover .card-image .product-image {
+    opacity: 0; /* Hacer que la imagen original desaparezca */
+}
+
+.makeup-card-minimal:hover .card-image {
+    background-image: url('https://res.cloudinary.com/dw57gwzru/image/upload/v1737073206/nature_lips-1_ejy6ib.jpg'); /* Cambia la imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+.about__content--subtitle--black {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+.about__content--title--np {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2.5;
+}
+
+.about__content--title--np--secundary {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 5px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr)); /* Ajusta el número de tarjetas por fila */
+    gap: 20px; /* Aumenta el espacio entre las tarjetas */
+    padding: 15px;
+    justify-items: center; /* Centra las tarjetas dentro de su contenedor */
+}
+
+.makeup-card-minimal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    width: 280px; /* Ajusta el ancho de las tarjetas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.makeup-card-minimal:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.makeup-card-minimal:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.about__content--title--np {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2.5;
+}
+
+.about__content--title--np--secundary {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 5px;
+}
