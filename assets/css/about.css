@@ -303,22 +303,9 @@ p.description {
 
 .about__content--subtitle {
   font-size: var(--subtitle-font-size);
-  line-height: 1rem;
+  line-height: calc(var(--subtitle-font-size) + 0.25rem);
   font-weight: var(--headings-weight);
   color: var(--au-black);
-}
-
-@media only screen and (min-width: 768px) {
-  .about__content--subtitle {
-    font-size: 1.8rem;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .about__content--subtitle {
-    font-size: 2rem;
-    line-height: 2.4rem;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -332,32 +319,26 @@ p.description {
 }
 
 .about__content--desc {
-  font-size: var(--subtitle-font-size);
-  line-height: var(--space-7-half-x);
+  font-size: var(--body-font-size);
+  line-height: calc(var(--title-font-size) + 0.25rem);
   color: var(--primary-color);
   margin-top: var(--space-2-x);
 }
 
 @media only screen and (min-width: 768px) {
   .about__content--desc {
-    font-size: 1.5rem;
-    line-height: var(--space-7-half-x);
     margin-top: var(--space-2-x);
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .about__content--desc {
-    font-size: 1.7rem;
-    line-height: 3rem;
     margin-top: var(--space-2-x);
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .about__content--desc {
-    font-size: 1.8rem;
-    line-height: 3rem;
     margin-top: 1.7rem;
   }
 }
@@ -388,8 +369,8 @@ p.description {
   }
 
   .about-img{
-    width: 116%;
-    max-width: 116%;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -432,7 +413,7 @@ p.description {
 
 @media only screen and (min-width: 1366px) {
   .about__experience--years {
-    font-size: 5rem;
+    font-size: 3rem;
     line-height: 4rem;
   }
 }
@@ -463,10 +444,11 @@ p.description {
 
 @media only screen and (min-width: 1366px) {
   .about__experience--title {
-    font-size: 1.8rem;
-    line-height: 2.6rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
   }
 }
+
 /*
     team member css
 */
@@ -493,6 +475,7 @@ p.description {
 
 .team__social {
   gap: 1rem;
+  margin-top: var(--space-2-x);
 }
 
 @media only screen and (min-width: 1200px) {
@@ -527,9 +510,9 @@ p.description {
 
 @media only screen and (min-width: 1200px) {
   .team__social--icon {
-    width: 3rem;
-    height: 3rem;
-    line-height: 3.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.8rem;
   }
 }
 
@@ -544,35 +527,29 @@ p.description {
 }
 
 .team__content--subtitle {
+  font-size: var(--body-title-font-size);
+  line-height: calc(var(--body-title-font-size)+0.25rem);
   color: var(--foreground-sub-color);
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-@media only screen and (min-width: 767px) {
-  .team__content--subtitle {
-    font-size: 1.6rem;
-    line-height: 4.2rem;
-  }
 }
 
 .team__content--title {
   font-weight: 600;
-  font-size: 1.7rem;
-  line-height: 2rem;
+  font-size: var(--third-title-font-size);
+  line-height: calc(var(--third-title-font-size) + 0.25rem);
   color: var(--primary-color);
 }
 
 @media only screen and (min-width: 992px) {
   .team__content--title {
-    font-size: 1.8rem;
+    font-size: var(--third-title-font-size);
+    line-height: calc(var(--third-title-font-size) + 0.25rem);
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .team__content--title {
-    font-size: 2rem;
-    line-height: 2.2rem;
+    font-size: var(--third-title-font-size);
+    line-height: calc(var(--third-title-font-size) + 0.25rem);
   }
 }
 
