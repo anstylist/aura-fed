@@ -616,11 +616,11 @@ function offcanvsSidebar(openTrigger, closeTrigger, wrapper) {
 }
 
 // Mini Cart
-offcanvsSidebar(
-  ".minicart__open--btn",
-  ".minicart__close--btn",
-  ".offCanvas__minicart"
-);
+// offcanvsSidebar(
+//   ".minicart__open--btn",
+//   ".minicart__close--btn",
+//   ".offCanvas__minicart"
+// );
 
 // Search Bar
 offcanvsSidebar(

@@ -21,6 +21,7 @@
    <link rel="stylesheet" href="assets/css/variables.css">
    <link rel="stylesheet" href="assets/css/style.css">
    <link rel="stylesheet" href="assets/css/header.css">
+   <link rel="stylesheet" href="assets/css/breadcrumb.css">
    <link rel="stylesheet" href="assets/css/footer.css">
    <link rel="stylesheet" href="assets/css/about.css">
 
@@ -70,9 +71,8 @@
         </div>
     </div>
     <!-- End preloader -->
-    
     <!-- Start header area -->
-    <header class="header__section mb-30">
+    <header class="header__section">
         <div class="header__topbar bg__primary">
             <div class="container">
                 <div class="header__topbar--inner style6 d-flex align-items-center justify-content-between">
@@ -109,51 +109,28 @@
                         <nav class="header__menu--navigation">
                             <ul class="header__menu--wrapper d-flex">
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="index.html">Home 
+                                    <a class="header__menu--link" href="#">Home</a>
+                                </li>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="#">Categories 
                                         <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
                                             <path  d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                                         </svg>
                                     </a>
                                     <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="index.html" class="header__sub--menu__link">Home - Products</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-2.html" class="header__sub--menu__link">Home - Influencers</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-3.html" class="header__sub--menu__link">Home - Review</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-4.html" class="header__sub--menu__link">Home -  Brands</a></li>
-                                    </ul>
+                                      <li class="header__sub--menu__items"><a href="#" class="header__sub--menu__link">Lips</a></li>
+                                      <li class="header__sub--menu__items"><a href="#" class="header__sub--menu__link">Eyes</a></li>
+                                      <li class="header__sub--menu__items"><a href="#" class="header__sub--menu__link">Skincare</a></li>
+                                      <li class="header__sub--menu__items"><a href="#" class="header__sub--menu__link">Hair</a></li>
+                                      <li class="header__sub--menu__items"><a href="#" class="header__sub--menu__link">Perfumes</a></li>
+                                      <li class="header__sub--menu__items"><a href="#" class="header__sub--menu__link"></a></li>
+                                  </ul>
                                 </li>
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="shop.html">Shop 
-                                        <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
-                                            <path  d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                        </svg>
-                                    </a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="index.html" class="header__sub--menu__link">Home - Products</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-2.html" class="header__sub--menu__link">Home - Influencers</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-3.html" class="header__sub--menu__link">Home - Review</a></li>
-                                        <li class="header__sub--menu__items"><a href="index-4.html" class="header__sub--menu__link">Home -  Brands</a></li>
-                                    </ul>
+                                    <a class="header__menu--link" href="about-us.html">About us </a>  
                                 </li>
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="shop.html">About me </a>  
-                                </li>
-                                
-                                <li class="header__menu--items">
-                                    <a class="header__menu--link" href="#">Pages 
-                                        <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
-                                            <path  d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                        </svg>
-                                    </a>
-                                    <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="about.html" class="header__sub--menu__link">About Us</a></li>
-                                        <li class="header__sub--menu__items"><a href="contact.html" class="header__sub--menu__link">Contact Us</a></li>
-                                        <li class="header__sub--menu__items"><a href="cart.html" class="header__sub--menu__link">Cart Page</a></li>
-                                        <li class="header__sub--menu__items"><a href="login.html" class="header__sub--menu__link">Login Page</a></li>
-                                        <li class="header__sub--menu__items"><a href="404.html" class="header__sub--menu__link">Error Page</a></li>
-                                    </ul>
-                                </li>
-                                <li class="header__menu--items">
-                                    <a class="header__menu--link" href="contact.html">Contact us </a>  
+                                    <a class="header__menu--link" href="contact-us.html">Contact us </a>  
                                 </li>
                             </ul>
                         </nav>
@@ -170,16 +147,7 @@
                                     <span class="visually-hidden">Search</span>  
                                 </a>
                             </li>
-                            <li class="header__account--items">
-                                <a class="header__account--btn d-sm-2-none text-white" href="wishlist.html">
-                                    <span class="header__account--btn__icon">
-                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.09836 2.28681C1.75014 2.69477 1.47391 3.1791 1.28545 3.71213C1.097 4.24516 1 4.81646 1 5.39341C1 5.97036 1.097 6.54167 1.28545 7.0747C1.47391 7.60773 1.75014 8.09206 2.09836 8.50002L8.50001 16L14.9016 8.50002C15.6049 7.6761 16 6.55862 16 5.39341C16 4.22821 15.6049 3.11073 14.9016 2.28681C14.1984 1.46289 13.2446 1.00001 12.25 1.00001C11.2554 1.00001 10.3016 1.46289 9.59833 2.28681L8.50001 3.57358L7.40168 2.28681C7.05346 1.87884 6.64006 1.55522 6.18509 1.33443C5.73011 1.11364 5.24248 1 4.75002 1C4.25756 1 3.76992 1.11364 3.31495 1.33443C2.85998 1.55522 2.44658 1.87884 2.09836 2.28681V2.28681Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
-                                    <span class="visually-hidden">Wishlist</span> 
-                                </a>
-                            </li>
+                            
                             <li class="header__account--items">
                                 <a class="header__account--btn d-sm-2-none text-white" href="my-account.html">
                                     <span class="header__account--btn__icon">
@@ -198,6 +166,7 @@
                                             <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>  
                                     </span>
+                                    <span class="visually-hidden">Shopping Cart</span>
                                     <span class="items__count">2</span> 
                                 </a>
                             </li>
@@ -220,45 +189,35 @@
                     <ul class="offcanvas__menu_ul">
                         <li class="offcanvas__menu_li">
                             <a class="offcanvas__menu_item" href="index.html">Home</a>
-                            <ul class="offcanvas__sub_menu">
-                                <li class="offcanvas__sub_menu_li"><a href="index.html" class="offcanvas__sub_menu_item">Home - Products</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="index-2.html" class="offcanvas__sub_menu_item">Home - Influencers</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="index-3.html" class="offcanvas__sub_menu_item">Home - Review</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="index-4.html" class="offcanvas__sub_menu_item">Home - Brands</a></li>
-                            </ul>
+                            
                         </li>
                         <li class="offcanvas__menu_li">
-                            <a class="offcanvas__menu_item" href="shop.html">Shop</a>
+                            <a class="offcanvas__menu_item" href="#">Categories</a>
                             <ul class="offcanvas__sub_menu">
                                 <li class="offcanvas__sub_menu_li">
-                                    <a href="#" class="offcanvas__sub_menu_item">Column One</a>
+                                    <a href="#" class="offcanvas__sub_menu_item">Lips</a>
                                     <ul class="offcanvas__sub_menu">
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="shop.html">Shop Left Sidebar</a></li>
-                                        
+                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="#">Lips products</a></li>                                
                                     </ul>
                                 </li>
                                 <li class="offcanvas__sub_menu_li">
-                                    <a href="#" class="offcanvas__sub_menu_item">Column Two</a>
+                                  <a href="#" class="offcanvas__sub_menu_item">Eyes</a>
+                                  <ul class="offcanvas__sub_menu">
+                                      <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="#">Eyes products</a></li>                                
+                                  </ul>
+                              </li>
+                                <li class="offcanvas__sub_menu_li">
+                                    <a href="#" class="offcanvas__sub_menu_item">Skincare</a>
                                     <ul class="offcanvas__sub_menu">
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="product-details.html">Product Details</a></li>
-                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="product-gallery.html">Product Gallery</a></li>
+                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="#"> Eyes Products</a></li>
+                                        <li class="offcanvas__sub_menu_li"><a class="offcanvas__sub_menu_item" href="#">Product Gallery</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         </li>
-                        <li class="offcanvas__menu_li">
-                            <a class="offcanvas__menu_item" href="#">Pages</a>
-                            <ul class="offcanvas__sub_menu">
-                                <li class="offcanvas__sub_menu_li"><a href="about.html" class="offcanvas__sub_menu_item">About Us</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="contact.html" class="offcanvas__sub_menu_item">Contact Us</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="cart.html" class="offcanvas__sub_menu_item">Cart Page</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="login.html" class="offcanvas__sub_menu_item">Login Page</a></li>
-                                <li class="offcanvas__sub_menu_li"><a href="404.html" class="offcanvas__sub_menu_item">Error Page</a></li>
-                            </ul>
-                        </li>
-                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about.html">About us</a></li>
-                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="contact.html">Contact us</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about-us.html">About us</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="contact-us.html">Contact us</a></li>
                     </ul>
                     <div class="offcanvas__account--items">
                         <a class="offcanvas__account--items__btn d-flex align-items-center" href="login.html">
@@ -285,11 +244,11 @@
                     </a>
                 </li>
                 <li class="offcanvas__sticky--toolbar__list">
-                    <a class="offcanvas__sticky--toolbar__btn" href="shop.html">
+                    <a class="offcanvas__sticky--toolbar__btn" href="#">
                     <span class="offcanvas__sticky--toolbar__icon"> 
                         <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18.51" height="17.443" viewBox="0 0 448 512"><path d="M416 32H32A32 32 0 0 0 0 64v384a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-16 48v152H248V80zm-200 0v152H48V80zM48 432V280h152v152zm200 0V280h152v152z"></path></svg>
                         </span>
-                    <span class="offcanvas__sticky--toolbar__label">Shop</span>
+                    <span class="offcanvas__sticky--toolbar__label">Categories</span>
                     </a>
                 </li>
                 <li class="offcanvas__sticky--toolbar__list ">
@@ -385,7 +344,7 @@
         </div>
         <!-- End offCanvas minicart -->
   
-        <!-- Start serch box area -->
+        <!-- Start search box area -->
         <div class="predictive__search--box ">
             <div class="predictive__search--box__inner">
                 <h2 class="predictive__search--title">Search Products</h2>
@@ -400,11 +359,30 @@
                 <svg class="predictive__search--close__icon" xmlns="http://www.w3.org/2000/svg" width="40.51" height="30.443"  viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
             </button>
         </div>
-        <!-- End serch box area -->
+        <!-- End search box area -->
         
     </header>
     <!-- End header area -->
   
+    <!-- Start breadcrumb section -->
+    <section class="breadcrumb__section breadcrumb__bg">
+      <div class="container">
+          <div class="row row-cols-1">
+              <div class="col">
+                  <nav class="breadcrumb__content">
+                      <ul class="breadcrumb__content--menu d-flex ">
+                          <li class="breadcrumb__content--menu__items"><a href="index.html">Home</a></li>
+                          <li class="breadcrumb__content--menu__items"><span>About us</span></li>
+                      </ul>
+                    </nav>
+              </div>
+          </div>
+      </div>
+    </section>
+  <!-- End breadcrumb section -->
+    
+
+
 
        <!-- Start about section -->
        <section class="about__Section section--padding">
@@ -743,10 +721,10 @@
                             </h2>
                             <ul class="footer__widget--menu footer__widget--inner">
                                 <li class="footer__widget--menu__list">
-                                    <a class="footer__widget--menu__text" href="contact.html">Contact Us</a>
+                                    <a class="footer__widget--menu__text" href="contact-us.html">Contact Us</a>
                                 </li>
                                 <li class="footer__widget--menu__list footer__widget--menu__active">
-                                    <a class="footer__widget--menu__text" href="about.html">About Us</a>
+                                    <a class="footer__widget--menu__text" href="about-us.html">About Us</a>
                                 </li>
                                 <li class="footer__widget--menu__list">
                                     <a class="footer__widget--menu__text" href="cart.html">Shopping Cart</a>

@@ -39,6 +39,10 @@ html {
   transition: 0.3s;
 }
 
+.header__sticky.sticky .menu__color--white .header__menu--navigation .header__menu--link {
+  color: var(--au-black);
+}
+
 @media only screen and (max-width: 575px) {
   .header__sticky.sticky {
     padding: 1.5rem 0.5rem;
@@ -1185,4 +1189,190 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+
+/* 
+    offcanvas Sub Menu 
+*/
+.offcanvas__sub_menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offcanvas__sub_menu_li {
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.offcanvas__sub_menu_item {
+  line-height: 1;
+  display: block;
+  padding: 15px 0 15px 30px;
+  color: var(--primary-color);
+}
+
+.offcanvas__sub_menu_item ~ .offcanvas__sub_menu .offcanvas__sub_menu_item {
+  padding-left: 40px;
+}
+
+.offcanvas__sub_menu_toggle {
+  font-size: 20px;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  width: 4rem;
+  height: 3rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.offcanvas__sub_menu_toggle::before, .offcanvas__sub_menu_toggle::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  content: "";
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background-color: var(--bg-black-color);
+}
+
+.offcanvas__sub_menu_toggle:not(.active)::after {
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(90deg);
+          transform: translateX(-50%) translateY(-50%) rotate(90deg);
+}
+
+.offcanvas__account--items {
+  margin-top: 2rem;
+  padding: 0 1.5rem;
+}
+
+.offcanvas__account--items__btn {
+  color: var(--secondary-color);
+  gap: 0.5rem;
+}
+
+.offcanvas__sticky--toolbar a,button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*
+    Offcanvas mobile sticky toolbar css here
+*/
+.offcanvas__sticky--toolbar {
+  position: fixed;
+  bottom: 0;
+  background: var(--body-background-color);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  -webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 9px rgba(0, 0, 0, 0.12);
+  padding: 14px 20px;
+  display: none;
+}
+
+@media only screen and (min-width: 500px) {
+  .offcanvas__sticky--toolbar {
+    padding: 14px 40px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .offcanvas__sticky--toolbar {
+    padding: 14px 60px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .offcanvas__sticky--toolbar {
+    display: block;
+  }
+}
+
+.offcanvas__sticky--toolbar__btn {
+  position: relative;
+  text-align: center;
+}
+
+.offcanvas__sticky--toolbar__btn:hover .offcanvas__sticky--toolbar__icon {
+  background: var(--primary-color);
+  color: var(--text-white-color);
+}
+
+.offcanvas__sticky--toolbar__btn > * {
+  pointer-events: none;
+}
+
+.offcanvas__sticky--toolbar__btn.minicart__open--btn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.offcanvas__sticky--toolbar__icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  text-align: center;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  color: var(--text-white-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.offcanvas__sticky--toolbar__label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.offcanvas__sticky--toolbar .items__count {
+  left: 2.3rem;
+  top: -9px;
+}
+
+/*
+    header sticky css here
+*/
+.header__sticky.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: var(--body-background-color);
+  left: 0;
+  z-index: 99;
+  padding: 1rem 0.5rem;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 575px) {
+  .header__sticky.sticky {
+    padding: 1.5rem 0.5rem;
+  }
 }
