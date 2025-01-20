@@ -29,11 +29,13 @@
   --primary-font: 'Roboto', sans;
   --secondary-font: 'Be Vietnam Pro', sans;
   --small-font-size: 0.75rem;
+  --title-font-size: 2rem;
+  --subtitle-font-size: 1.8rem;
+  --third-title-font-size: 1.5rem;
+  --body-title-font-size: 1.3rem;
   --body-font-size: 1rem;
-  --subtitle-font-size: 1.5rem;
-  --title-font-size: 1.8rem;
-  --footer-font-size: 1rem;
   --footer-title-font-size: 1.3rem;
+  --footer-font-size: 1rem;
   --body-font-weight: 400;
   --body-line-height: 1.5rem;
   --headings-weight: 700;
