@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Intense Lipstick",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/lips_bgaiyu.jpg",
+    "description": "This is the most intense lipstick",
+    "category": "lips",
+    "price": 15000,
+    "stock": 100
+  },
+  {
+    "id": 2,
+    "name": "Natural Lipstick",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/lips_bgaiyu.jpg",
+    "description": "This is the most natural lipstick",
+    "category": "lips",
+    "price": 13000,
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "name": "Beard Oil Classic",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/beard_oil.jpg",
+    "description": "A nourishing oil for a soft and shiny beard",
+    "category": "beard",
+    "price": 18000,
+    "stock": 60
+  },
+  {
+    "id": 4,
+    "name": "Beard Balm Deluxe",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/beard_balm.jpg",
+    "description": "Style and moisturize your beard with ease",
+    "category": "beard",
+    "price": 20000,
+    "stock": 40
+  },
+  {
+    "id": 5,
+    "name": "Hair Wax Matte",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/hair_wax.jpg",
+    "description": "Create a strong hold with a natural matte finish",
+    "category": "hair",
+    "price": 22000,
+    "stock": 70
+  },
+  {
+    "id": 6,
+    "name": "Volumizing Shampoo",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/shampoo.jpg",
+    "description": "Adds volume and shine to your hair",
+    "category": "hair",
+    "price": 25000,
+    "stock": 80
+  },
+  {
+    "id": 7,
+    "name": "Hydrating Face Cream",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/face_cream.jpg",
+    "description": "Keeps your skin soft and hydrated all day",
+    "category": "face",
+    "price": 30000,
+    "stock": 90
+  },
+  {
+    "id": 8,
+    "name": "Anti-aging Serum",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/serum.jpg",
+    "description": "Reduces wrinkles and rejuvenates the skin",
+    "category": "skin care",
+    "price": 45000,
+    "stock": 50
+  },
+  {
+    "id": 9,
+    "name": "Refreshing Eye Gel",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/eye_gel.jpg",
+    "description": "Eliminates puffiness and dark circles",
+    "category": "eyes",
+    "price": 28000,
+    "stock": 75
+  },
+  {
+    "id": 10,
+    "name": "Luxury Perfume",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/perfume.jpg",
+    "description": "A long-lasting fragrance for special occasions",
+    "category": "perfume",
+    "price": 60000,
+    "stock": 40
+  },
+  {
+    "id": 11,
+    "name": "Daily Sunscreen",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/sunscreen.jpg",
+    "description": "Protects your skin from harmful UV rays",
+    "category": "skin care",
+    "price": 35000,
+    "stock": 65
+  },
+  {
+    "id": 12,
+    "name": "Charcoal Face Mask",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/face_mask.jpg",
+    "description": "Deep cleanses and refreshes your face",
+    "category": "face",
+    "price": 20000,
+    "stock": 100
+  }
+]

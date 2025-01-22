@@ -1,0 +1,18 @@
+.add-to-cart-button
+{
+    color: var(--au-light-gray) !important;
+    border-color: var(--purple-color);
+    background-color: var(--purple-color);
+    opacity: 80%;
+}
+
+.add-to-cart-button:hover
+{
+    opacity: 100%;
+}
+
+.text-justify {
+    text-align: justify;
+    text-align-last: justify;
+}
+
