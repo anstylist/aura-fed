@@ -16,3 +16,18 @@
     text-align-last: justify;
 }
 
+.img-container {
+    height: 60% !important;
+}
+
+.card-fixer {
+    max-height: 500px;
+}
+
+.card-description {
+    min-height: 54px;
+}
+
+
+
+

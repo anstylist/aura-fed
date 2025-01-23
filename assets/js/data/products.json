@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Intense Lipstick",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/lips_bgaiyu.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737604221/lips-6_zy1qwt.jpg",
     "description": "This is the most intense lipstick",
     "category": "lips",
     "price": 15000,
@@ -10,9 +10,9 @@
   },
   {
     "id": 2,
-    "name": "Natural Lipstick",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/lips_bgaiyu.jpg",
-    "description": "This is the most natural lipstick",
+    "name": "Eye pencil",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737608807/Eye-5_hn06eb.png",
+    "description": "Defines eyes with smooth, precise lines",
     "category": "lips",
     "price": 13000,
     "stock": 50
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Beard Oil Classic",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/beard_oil.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_400,h_500/v1737520275/Bearb_jz223v.jpg",
     "description": "A nourishing oil for a soft and shiny beard",
     "category": "beard",
     "price": 18000,
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Beard Balm Deluxe",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/beard_balm.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_400,h_570/v1737555922/Barb-3_edfbyr.png",
     "description": "Style and moisturize your beard with ease",
     "category": "beard",
     "price": 20000,
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Hair Wax Matte",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/hair_wax.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737521920/Hair-2_ot3bff.jpg",
     "description": "Create a strong hold with a natural matte finish",
     "category": "hair",
     "price": 22000,
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "Volumizing Shampoo",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/shampoo.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_1000,h_1000/v1737521402/hair_ch9u4y.png",
     "description": "Adds volume and shine to your hair",
     "category": "hair",
     "price": 25000,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Hydrating Face Cream",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/face_cream.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737413112/face_wltg2c.jpg",
     "description": "Keeps your skin soft and hydrated all day",
     "category": "face",
     "price": 30000,
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "name": "Anti-aging Serum",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/serum.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737556711/Face-6_wzthdm.png",
     "description": "Reduces wrinkles and rejuvenates the skin",
     "category": "skin care",
     "price": 45000,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "name": "Refreshing Eye Gel",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/eye_gel.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_550,h_800/v1737606579/Face-10_u5rht5.png",
     "description": "Eliminates puffiness and dark circles",
     "category": "eyes",
     "price": 28000,
@@ -83,7 +83,7 @@
   {
     "id": 10,
     "name": "Luxury Perfume",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/perfume.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737607466/Perf-3_bnzqah.jpg",
     "description": "A long-lasting fragrance for special occasions",
     "category": "perfume",
     "price": 60000,
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "name": "Daily Sunscreen",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/sunscreen.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_600/v1737607614/Face-11_irwgpd.png",
     "description": "Protects your skin from harmful UV rays",
     "category": "skin care",
     "price": 35000,
@@ -100,11 +100,11 @@
   },
   {
     "id": 12,
-    "name": "Charcoal Face Mask",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737063524/face_mask.jpg",
-    "description": "Deep cleanses and refreshes your face",
+    "name": "Eyeshadow",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737409765/eyes_-_2_hdlzpo.jpg",
+    "description": "Enhances eyelids with colorful, pigments",
     "category": "face",
     "price": 20000,
-    "stock": 100
+    "stock": 98
   }
 ]
