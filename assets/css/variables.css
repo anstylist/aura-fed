@@ -9,6 +9,8 @@
   --au-beige:#E4DBD3;
   --secondary-color:  #bca792;
   --au-brown:#bca792;
+  --au-brown-light: #C9B8A7;
+  --au-brown-shadow: rgba(201, 184, 167, 0.25);
   --purple-color: #773875; 
   --au-purple: #773875; 
   --hover-color: #6E2139;
@@ -17,6 +19,8 @@
   --au-aqua: #52B194;
   --foreground-color:  #5E6E60;
   --au-green: #5E6E60;
+  --au-green-light: #7E8B7F;
+  --au-green-shadow: rgba(94, 110, 96, 0.25);
   --foreground-sub-color: #98928E;
   --body-text-color: #000000;
   --text-white-color: #fff;
