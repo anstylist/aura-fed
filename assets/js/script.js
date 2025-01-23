@@ -103,7 +103,7 @@ if (headerStickyTarget) {
   let headerHeight = headerStickyWrapper.clientHeight;
   window.addEventListener("scroll", function () {
     let StickyTargetElement = TopOffset(headerStickyWrapper);
-    let TargetElementTopOffset = StickyTargetElement.top;
+    let TargetElementTopOffset = StickyTargetElement.top + 20;
 
     if (window.scrollY > TargetElementTopOffset) {
       headerStickyTarget.classList.add("sticky");
