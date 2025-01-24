@@ -5,7 +5,6 @@ fetch('assets/js/data/products.json')
     .then(text => renderProducts(JSON.parse(text)))
     .catch(error => console.error('Error cargando el archivo JSON:', error));
 
-
 function renderProducts(data)
 {
     let productsRow = document.getElementById("products");
@@ -19,12 +18,12 @@ function renderProducts(data)
             '                </div>\n' +
             '                <div class="card-body">\n' +
             '                    <div class="row">\n' +
-            '                        <div class="col-8 justify-content-start">\n' +
+            '                        <div class="col-7 justify-content-start">\n' +
             '                            <h4 class="fs-5 fw-bold align-text-bottom"> ' + data[i].name + '</h4>\n' +
             '                        </div>\n' +
-            '                        <div class="col-4 align-middle justify-content-end text-end">\n' +
+            '                        <div class="col-5 align-middle justify-content-end text-end">\n' +
             '                            <p class="card-text align-text-bottom fw-bold">\n' +
-            '                                $ ' + data[i].price + ' \n' +
+            '                                $' + data[i].price + ' \n' +
             '                            </p>\n' +
             '                        </div>\n' +
             '                    </div>\n' +

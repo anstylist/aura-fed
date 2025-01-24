@@ -28,6 +28,44 @@
     min-height: 54px;
 }
 
+.card {
+    /* Esto es necesario para que el botón se posicione relativo a la tarjeta */
+    position: relative;
+    width: 100%;
+    /* ajusta el tamaño de las tarjetas */
+    max-width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 20px;
+    /* Espacio adicional para que el botón no se solape con el contenido */
+    padding-bottom: 60px;
+}
+
+.add-to-cart-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    /* Centra el botón horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta el tamaño del botón */
+    width: 75%;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+}
+
+.card-text {
+    /* Ajusta el espacio entre renglones con la variable definas en aura */
+    line-height: var( --space-4-x);
+}
+
 
 
 

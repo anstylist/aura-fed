@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Intense Lipstick",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737604221/lips-6_zy1qwt.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737677093/download_zeflik.jpg",
     "description": "This is the most intense lipstick",
     "category": "lips",
     "price": 15000,
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Hydrating Face Cream",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737413112/face_wltg2c.jpg",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_400,h_389/v1737413112/face_wltg2c.jpg",
     "description": "Keeps your skin soft and hydrated all day",
     "category": "face",
     "price": 30000,
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "name": "Refreshing Eye Gel",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_550,h_800/v1737606579/Face-10_u5rht5.png",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_520,h_550/v1737606579/Face-10_u5rht5.png",
     "description": "Eliminates puffiness and dark circles",
     "category": "eyes",
     "price": 28000,
@@ -92,7 +92,7 @@
   {
     "id": 11,
     "name": "Daily Sunscreen",
-    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_600/v1737607614/Face-11_irwgpd.png",
+    "img": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_550,h_700/v1737607614/Face-11_irwgpd.png",
     "description": "Protects your skin from harmful UV rays",
     "category": "skin care",
     "price": 35000,
