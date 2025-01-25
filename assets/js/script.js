@@ -749,8 +749,12 @@ window.addEventListener("load", function () {
     footerWidgetAccordion();
   }
 });
-window.addEventListener("resize", function () {
+
+//TODO: Arreglar el error que causa esta funcion
+/*window.addEventListener("resize", function () {
+  console.log("Afuera");
   document.querySelectorAll(".footer__widget").forEach(function (item) {
+    console.log("Dentro");
     if (window.outerWidth >= 768) {
       item.classList.remove("active");
       item.querySelector(".footer__widget--inner").style.display = "";
@@ -759,7 +763,7 @@ window.addEventListener("resize", function () {
   if (accordion) {
     footerWidgetAccordion();
   }
-});
+});*/
 
 
 // lightbox Activation

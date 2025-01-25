@@ -17,15 +17,15 @@
     "id": 3,
     "name": "NAILS",
     "description": "Add the perfect polish to your nails",
-    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737697673/Nails-3_pz1am5.jpg",
-    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737697632/Nails-1jpg_irv0n5.jpg"
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_500,h_800/v1737697632/Nails-1jpg_irv0n5.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_370,h_650/v1737749798/NAILS-5_a1jt2y.jpg"
   },
   {
     "id": 4,
     "name": "HAIR",
     "description": "Bring out the best in your hair with our products",
-    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737072957/hair_cover.jpg",
-    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737073206/hair_hover.jpg"
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737752218/Hair-6jpg_v2cj61.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737604618/oil-1_wxeys4.jpg"
   },
   {
     "id": 5,
@@ -38,8 +38,8 @@
     "id": 6,
     "name": "FRAGANCES",
     "description": "Delight in the enchanting scents of our fragrances",
-    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737072957/fragrances_cover.jpg",
-    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737073206/fragrances_hover.jpg"
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737754207/Framgance-4_nmiicb.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737754152/Framgance-2_o79dfp.jpg"
   },
   {
     "id": 7,
@@ -52,7 +52,7 @@
     "id": 8,
     "name": "TOP-SELLER",
     "description": "Experience the magic of our top-seller",
-    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737072957/top_seller_cover.jpg",
-    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737073206/top_seller_hover.jpg"
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737409754/eyes_-_1_woiguy.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737413081/face_xoemx7.jpg"
   }
 ]
