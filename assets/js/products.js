@@ -12,24 +12,25 @@ function renderProducts(data)
 
     for (var i=0; i<data.length; i++)
     {
-        productsHtml += '<div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="' + data[i].id + '" data-category=" ' + data[i].category + ' " data-stock=" ' + data[i].stock + ' ">\n' +
+        const products = data[i]
+        productsHtml += '<div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="' + products.id + '" data-category=" ' + data[i].category + ' " data-stock=" ' + products.stock + ' ">\n' +
             '                <div class="img-container">\n' +
-            '                   <img class="card-img-top h-100" src=" ' + data[i].img + ' ">\n' +
+            '                   <img class="card-img-top h-100" src=" ' + products.img + ' ">\n' +
             '                </div>\n' +
             '                <div class="card-body">\n' +
             '                    <div class="row">\n' +
             '                        <div class="col-7 justify-content-start">\n' +
-            '                            <h4 class="fs-5 fw-bold align-text-bottom"> ' + data[i].name + '</h4>\n' +
+            '                            <h4 class="fs-5 fw-bold align-text-bottom"> ' + products.name + '</h4>\n' +
             '                        </div>\n' +
             '                        <div class="col-5 align-middle justify-content-end text-end">\n' +
             '                            <p class="card-text align-text-bottom fw-bold">\n' +
-            '                                $' + data[i].price + ' \n' +
+            '                                $' + products.price + ' \n' +
             '                            </p>\n' +
             '                        </div>\n' +
             '                    </div>\n' +
             '                    <div class="row card-description mt-2 mb-4">\n' +
             '                       <p class="card-text text-justify mt-2">\n' +
-            '                           ' +  data[i].description + '  ' +
+            '                           ' +  products.description + '  ' +
             '                       </p>\n' +
             '                    </div>\n' +
             '                    <div class="row justify-content-center">\n' +
