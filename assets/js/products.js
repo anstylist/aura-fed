@@ -5,6 +5,11 @@ fetch('assets/js/data/products.json')
   .then(text => renderProducts(JSON.parse(text)))
   .catch(error => console.error('Error cargando el archivo JSON:', error))
 
+/**
+ * It renders all the products in the page as a grid/list
+ * 
+ * @param {Product} data Products list
+*/
 function renderProducts (data) {
   let productsRow = document.getElementById('products')
   let productsHtml = ''
@@ -108,11 +113,21 @@ function handleAddToCart (event) {
   addButton.disabled = false;
 }
 
+/**
+ * It updates the product stock in the "Add to cart" button
+ * 
+ * @param {*} productsInCart 
+ */
 function updateStock(product, qty = 1) {
     const productButton = document.querySelector(`#product-${product.id}__btn`)
     productButton.setAttribute('data-stock', product.stock - qty)
 }
 
+/**
+ * It updates the product counter tag in the page header
+ * 
+ * @param {*} productsInCart 
+ */
 function updateProductsCounter (productsInCart) {
   const counter = productsInCart.reduce((acc, product) => {
     return acc + product.qty
@@ -122,6 +137,12 @@ function updateProductsCounter (productsInCart) {
   counterElement.innerHTML = counter
 }
 
+/**
+ * It renders the shopping cart products list and the summary for payment
+ * 
+ * @param {*} productsInCart the products added in the shopping cart (in localstorage)
+ * @returns 
+ */
 function renderShoppingCart(productsInCart) {
     const productsListElement = document.querySelector('#minicart__products-list')
     const productsPaymentElement = document.querySelector('#minicart__products-payment')
@@ -211,7 +232,11 @@ function renderShoppingCart(productsInCart) {
     addEventListenerToShoppingCart(productsInCart)
 }
 
-
+/**
+ * It adds the event listeners to the shopping cart control buttons (increase, decrease and delete)
+ * 
+ * @param {*} productsInCart 
+ */
 function addEventListenerToShoppingCart(productsInCart) {
     const quantityWrapper = document.querySelectorAll(".minicart__product-controls");
     if (quantityWrapper) {
