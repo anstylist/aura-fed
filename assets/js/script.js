@@ -581,7 +581,8 @@ function offcanvsSidebar(openTrigger, closeTrigger, wrapper) {
 
   function handleBodyClass(evt) {
     let eventTarget = evt.target;
-    if (!eventTarget.closest(wrapper) && !eventTarget.closest(openTrigger)) {
+    
+    if (!eventTarget.closest(wrapper) && !eventTarget.closest(openTrigger) && !(eventTarget.dataset.inMinicart != undefined)) {
       WrapperSidebar.classList.remove("active");
       document
         .querySelector("body")
@@ -635,37 +636,6 @@ offcanvsSidebar(
   ".offcanvas__filter--close",
   ".offcanvas__filter--sidebar"
 );
-
-// Qunatity Button Activation
-const quantityWrapper = document.querySelectorAll(".quantity__box");
-if (quantityWrapper) {
-  quantityWrapper.forEach(function (singleItem) {
-    let increaseButton = singleItem.querySelector(".increase");
-    let decreaseButton = singleItem.querySelector(".decrease");
-
-    increaseButton.addEventListener("click", function (e) {
-      let input = e.target.previousElementSibling.children[0];
-      if (input.dataset.counter != undefined) {
-        let value = parseInt(input.value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        input.value = value;
-      }
-    });
-
-    decreaseButton.addEventListener("click", function (e) {
-      let input = e.target.nextElementSibling.children[0];
-      if (input.dataset.counter != undefined) {
-        let value = parseInt(input.value, 10);
-        value = isNaN(value) ? 0 : value;
-        value < 1 ? (value = 1) : "";
-        value--;
-        input.value = value;
-      }
-    });
-  });
-}
-
 
 // Accordion
 function customAccordion(accordionWrapper, singleItem, accordionBody) {
@@ -1007,4 +977,14 @@ const newsletterPopup = function () {
 };
 newsletterPopup();
 
+function showToast(id) {
+  const toastEl = document.querySelector(`#${id}`)
+  const toast = new bootstrap.Toast(toastEl)
+  toast.show()
+}
 
+function hideToast(id) {
+  const toastEl = document.querySelector(`#${id}`)
+  const toast = new bootstrap.Toast(toastEl)
+  toast.hide()
+}

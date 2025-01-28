@@ -323,7 +323,7 @@
                 <p class="minicart__header--desc">The Beauty and Cosmetic products are limited</p>
             </div>
             <div id="minicart__products-list" class="minicart__products-list"></div>
-            <div id="minicart__products-payment" class="minicart__products-payment" ></div>
+            <div id="minicart__products-payment" class="minicart__products-payment"></div>
             <div class="minicart__conditions text-center">
                 <input class="minicart__conditions--input" id="accept" type="checkbox">
                 <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.html">Privacy Policy</a></label>
@@ -582,7 +582,20 @@
     <div id="no-products-toast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
-                No products available in stock      
+                No more products available in stock      
+            </div>
+            <button
+                type="button"
+                class="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+            ></button>
+        </div>
+    </div>
+    <div id="product-added-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Your product has been successfully added to the shopping cart
             </div>
             <button
                 type="button"

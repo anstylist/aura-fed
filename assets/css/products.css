@@ -62,16 +62,10 @@
     line-height: var( --space-4-x);
 }
 
-.toast-container {
-    z-index: 99 !important;
-    bottom: 2rem;
-    right: 2rem;
-}
-
 .minicart__noproducts {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25rem;
+    height: 70vh;
     font-weight: bold;
 }
