@@ -8,12 +8,8 @@
 
 .add-to-cart-button:hover
 {
+    background-color: var(--purple-color);
     opacity: 100%;
-}
-
-.text-justify {
-    text-align: justify;
-    text-align-last: justify;
 }
 
 .img-container {
@@ -66,6 +62,8 @@
     line-height: var( --space-4-x);
 }
 
-
-
-
+.toast-container {
+    z-index: 99 !important;
+    bottom: 2rem;
+    right: 2rem;
+}

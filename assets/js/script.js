@@ -9,7 +9,8 @@
 
 /*
   Before After activation
-*/
+// */
+
 var divisor = document.getElementById("divisor"),
     handle = document.getElementById("handle"),
     slider = document.getElementById("slider");
@@ -45,7 +46,6 @@ var getSiblings = function (elem) {
   }
   return siblings;
 };
-
 /* Slide Up */
 var slideUp = (target, time) => {
   const duration = time ? time : 500;
