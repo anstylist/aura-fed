@@ -9,10 +9,13 @@ function renderProducts (data) {
   let productsRow = document.getElementById('products')
   let productsHtml = ''
 
+  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
+
   for (var i = 0; i < data.length; i++) {
     const product = data[i]
+    const qtyInCart = productsInCart.find(item => item.id === product.id)?.qty || 0
     productsHtml += `
-        <div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="${product.id}" data-category="${product.category}" data-stock="${product.stock}">
+        <div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="${product.id}">
             <div class="img-container">
                 <img class="card-img-top h-100" src="${product.img}">
             </div>
@@ -29,8 +32,8 @@ function renderProducts (data) {
                     <p class="card-text mt-2">${product.description}</p>
                 </div>
                 <div class="row justify-content-center">
-                    <button class="btn add-to-cart-button w-75" data-name="${product.name}" data-img="${product.img}" data-price="${product.price}"
-                    data-id="${product.id}" data-category="${product.category}" data-stock="${product.stock}">Add to cart</button>
+                    <button id="product-${product.id}__btn" class="btn add-to-cart-button w-75" data-name="${product.name}" data-img="${product.img}" data-price="${product.price}"
+                    data-id="${product.id}" data-category="${product.category}" data-stock="${product.stock-qtyInCart}">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -45,6 +48,9 @@ function renderProducts (data) {
   addToCartButtons.forEach(button => {
     button.addEventListener('click', handleAddToCart)
   })
+
+  updateProductsCounter(productsInCart)
+  renderShoppingCart(productsInCart)
 }
 
 function handleAddToCart (event) {
@@ -71,7 +77,7 @@ function handleAddToCart (event) {
   console.log({ productsInCart, indexInCart })
 
   if (indexInCart !== -1) {
-    // El producto ya fue agregado
+    // El producto ya fue agregado previamente
     productsInCart[indexInCart] = {
       ...productsInCart[indexInCart],
       qty: ++productsInCart[indexInCart].qty
@@ -83,8 +89,14 @@ function handleAddToCart (event) {
   // guardar en el local storage nuestro nuevo listado de productos actualizado
   localStorage.setItem('productsInCart', JSON.stringify(productsInCart))
 
+  updateStock(product)
   updateProductsCounter(productsInCart)
   renderShoppingCart(productsInCart)
+}
+
+function updateStock(product, qty = 1) {
+    const productButton = document.querySelector(`#product-${product.id}__btn`)
+    productButton.setAttribute('data-stock', product.stock-qty)
 }
 
 function updateProductsCounter (productsInCart) {
@@ -98,8 +110,19 @@ function updateProductsCounter (productsInCart) {
 
 function renderShoppingCart(productsInCart) {
     const productsListElement = document.querySelector('#minicart__products-list')
+    productsListElement.innerHTML = ""
+    
+    if (productsInCart.length <= 0) {
+        productsListElement.innerHTML = `
+            <div class="minicart__noproducts">
+                There are no products in the shopping cart
+            </div>
+        `
+        return
+    }
+    
     const productsPaymentElement = document.querySelector('#minicart__products-payment')
-    let subTotal = 0 
+    let subTotal = 0
     productsInCart.forEach((product) => {
         const productContainer = document.createElement('div')
 
