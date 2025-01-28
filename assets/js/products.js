@@ -1,19 +1,17 @@
 let json
 
 fetch('assets/js/data/products.json')
-    .then(response => response.text())
-    .then(text => renderProducts(JSON.parse(text)))
-    .catch(error => console.error('Error cargando el archivo JSON:', error))
+  .then(response => response.text())
+  .then(text => renderProducts(JSON.parse(text)))
+  .catch(error => console.error('Error cargando el archivo JSON:', error))
 
-function renderProducts(data)
-{
-    let productsRow = document.getElementById("products")
-    let productsHtml = ''
+function renderProducts (data) {
+  let productsRow = document.getElementById('products')
+  let productsHtml = ''
 
-    for (var i=0; i<data.length; i++)
-    {
-        const product = data[i]
-        productsHtml += `
+  for (var i = 0; i < data.length; i++) {
+    const product = data[i]
+    productsHtml += `
         <div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="${product.id}" data-category="${product.category}" data-stock="${product.stock}">
             <div class="img-container">
                 <img class="card-img-top h-100" src="${product.img}">
@@ -37,98 +35,128 @@ function renderProducts(data)
             </div>
         </div>
         `
-    }
+  }
 
-    // esta linea indica que ya los productos estan renderizados 
-    productsRow.innerHTML = productsHtml;
-    
-    // empezamos agregar eventos a los botones de los productos 
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', handleAddToCart);
-    });
+  // esta linea indica que ya los productos estan renderizados
+  productsRow.innerHTML = productsHtml
+
+  // empezamos agregar eventos a los botones de los productos
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-button')
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', handleAddToCart)
+  })
 }
 
-function handleAddToCart(event) {
-    const addButton = event.target
-    const product = {
-        ...addButton.dataset,
-        id: parseInt(addButton.dataset.id),
-        price: parseFloat(addButton.dataset.price),
-        stock: parseInt(addButton.dataset.stock),
-        quantity: 1
+function handleAddToCart (event) {
+  const addButton = event.target
+  const product = {
+    ...addButton.dataset,
+    id: parseInt(addButton.dataset.id),
+    price: parseFloat(addButton.dataset.price),
+    stock: parseInt(addButton.dataset.stock),
+    qty: 1
+  }
+
+  if (product.stock <= 0) {
+    const toastEl = document.querySelector('#no-products-toast')
+    const toast = new bootstrap.Toast(toastEl)
+    toast.show()
+    return
+  }
+
+  console.log('Adding product: ', product)
+
+  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
+  const indexInCart = productsInCart.findIndex(item => item.id === product.id)
+  console.log({ productsInCart, indexInCart })
+
+  if (indexInCart !== -1) {
+    // El producto ya fue agregado
+    productsInCart[indexInCart] = {
+      ...productsInCart[indexInCart],
+      qty: ++productsInCart[indexInCart].qty
     }
+  } else {
+    productsInCart.push(product)
+  }
 
-    if (product.stock <= 0) {
-        const toastEl = document.querySelector('#no-products-toast')
-        const toast = new bootstrap.Toast(toastEl)
-        toast.show()
-        return;
-    }
+  // guardar en el local storage nuestro nuevo listado de productos actualizado
+  localStorage.setItem('productsInCart', JSON.stringify(productsInCart))
 
-    console.log("Adding product: ", product);
-    
-    const productsInCart = JSON.parse(localStorage.getItem("productsInCart")) || []
-
-    
+  updateProductsCounter(productsInCart)
+  renderShoppingCart(productsInCart)
 }
-    // function addToCart(product) {
-    //     // Get the cart from localStorage (or initialize an empty object)
-    //     let cart = JSON.parse(localStorage.getItem('cart')) || {};
-      
-    //     const existingProduct = cart[product.id];
-      
-    //     if (existingProduct) {
-    //       if (existingProduct.quantity < product.stock) {
-    //         existingProduct.quantity++;
-    //       } else {
-    //         console.warn('Product quantity exceeds stock:', product.name);
-    //       }
-    //     } else {
-    //       cart[product.id] = { ...product, quantity: 1 };
-    //     }
-      
-    //     localStorage.setItem('cart', JSON.stringify(cart));
-      
-    //     console.log('Cart:', cart);
-    //   }
-      
-    //   function updateCartCount() {
-    //     const cartCountElement = document.querySelector('.cart-count');
-    //     if (cartCountElement) {
-    //       let totalQuantity = 0;
-    //       const cart = JSON.parse(localStorage.getItem('cart')) || {}; 
-      
-    //       for (const productId in cart) {
-    //         totalQuantity += cart[productId].quantity;
-    //       }
-    //       cartCountElement.textContent = totalQuantity;
-    //     } else {
-    //       console.warn('Cart count element not found');
-    //     }
-    //   }
-      
-    
-    // function updateCartCount() {
-    //     const cartCountElement = document.querySelector('.cart-count'); 
-    //     if (cartCountElement) {
-    //         let totalQuantity = 0;
-    //         for (const productId in cart) {
-    //             totalQuantity += cart[productId].quantity;
-    //         }
-    //         cartCountElement.textContent = totalQuantity;
-    //     } else {
-    //         console.warn('Cart count element not found');
-    //     }
-    // }
 
+function updateProductsCounter (productsInCart) {
+  const counter = productsInCart.reduce((acc, product) => {
+    return acc + product.qty
+  }, 0)
 
-// function addToCartEvents(data) {
-//     const addToCartButtons = document.querySelectorAll('.add-to-cart-button')
-//     addToCartButtons.forEach((element) => {
-//         element.addEventListener("click", handleAddToCart)
-//     })
-// }
+  const counterElement = document.querySelector('#cart-count')
+  counterElement.innerHTML = counter
+}
 
+function renderShoppingCart(productsInCart) {
+    const productsListElement = document.querySelector('#minicart__products-list')
+    const productsPaymentElement = document.querySelector('#minicart__products-payment')
+    let subTotal = 0 
+    productsInCart.forEach((product) => {
+        const productContainer = document.createElement('div')
+
+        productContainer.classList.add('minicart__product')
+        productContainer.innerHTML = `
+            <div class="minicart__product--items d-flex">
+                <div class="minicart__thumb">
+                    <a href="#">
+                        <img src="${product.img}" alt="${product.name} image">
+                    </a>
+                </div>
+                <div class="minicart__text">
+                    <h4 class="minicart__subtitle">
+                        <a href="#">
+                            ${product.name}
+                        </a>
+                    </h4>
+                    <div class="minicart__price">
+                        <span class="minicart__current--price">$${product.price}</span>
+                        <span class="minicart__old--price">$${product.price*1.5}</span>
+                    </div>
+                    <div class="minicart__text--footer d-flex align-items-center">
+                        <div class="quantity__box minicart__quantity">
+                            <button type="button" class="quantity__value decrease" aria-label="quantity value"
+                                value="Decrease Value">-</button>
+                            <label>
+                                <input readonly type="number" class="quantity__number" value="${product.qty}" min="1" max="${product.stock}" data-counter />
+                            </label>
+                            <button type="button" class="quantity__value increase" aria-label="quantity value"
+                                value="Increase Value">+</button>
+                        </div>
+                        <button class="minicart__product--remove" type="button" aria-label="Remove">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>`
+        productsListElement.appendChild(productContainer)
+        subTotal = subTotal + (product.qty * product.price)
+    })
+    productsPaymentElement.innerHTML = `
+        <div class="minicart__amount">
+            <div class="minicart__amount_list d-flex justify-content-between">
+                <span>Sub Total:</span>
+                <span><b>$${subTotal.toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</b></span>
+            </div>
+            <div class="minicart__amount_list d-flex justify-content-between">
+                <span>Total:</span>
+                <span><b>
+                    $${(subTotal*1.11).toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}
+                </b></span>
+            </div>
+        </div>`
+}
 
 

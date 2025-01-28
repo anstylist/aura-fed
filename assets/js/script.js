@@ -751,7 +751,7 @@ window.addEventListener("load", function () {
 });
 window.addEventListener("resize", function () {
   document.querySelectorAll(".footer__widget").forEach(function (item) {
-    if (window.outerWidth >= 768) {
+    if (window.outerWidth >= 768 && item.querySelector(".footer__widget--inner")) {
       item.classList.remove("active");
       item.querySelector(".footer__widget--inner").style.display = "";
     }
