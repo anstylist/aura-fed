@@ -69,3 +69,8 @@
     height: 70vh;
     font-weight: bold;
 }
+
+.offCanvas__minicart_active {
+    overflow: hidden;
+    position: fixed;
+}
