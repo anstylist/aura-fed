@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "FACE",
+    "description": "Find the perfect touch for your face",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_800,h_1000/v1737691496/Face-12_rs3jlr.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737691496/Face-13_vx10me.png"
+  },
+  {
+    "id": 2,
+    "name": "EYES",
+    "description": "Discover the ideal sparkle for your eyes",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737694307/Face-14_kwwpqt.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737695124/Eyes-8_cly0qi.png"
+  },
+  {
+    "id": 3,
+    "name": "NAILS",
+    "description": "Add the perfect polish to your nails",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_500,h_800/v1737697632/Nails-1jpg_irv0n5.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/c_crop,w_370,h_650/v1737749798/NAILS-5_a1jt2y.jpg"
+  },
+  {
+    "id": 4,
+    "name": "HAIR",
+    "description": "Bring out the best in your hair with our products",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737752218/Hair-6jpg_v2cj61.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737604618/oil-1_wxeys4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "LIPS",
+    "description": "Bring out the ultimate shine for your lips",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737072957/nature_lips_fryryi.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737073206/nature_lips-1_ejy6ib.jpg"
+  },
+  {
+    "id": 6,
+    "name": "FRAGANCES",
+    "description": "Delight in the enchanting scents of our fragrances",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737754207/Framgance-4_nmiicb.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737754152/Framgance-2_o79dfp.jpg"
+  },
+  {
+    "id": 7,
+    "name": "BEARD",
+    "description": "Unleash the bold definition for your beard",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737695740/Face-15jpg_ufgybr.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737521290/Barb-2_k22ihd.png"
+  },
+  {
+    "id": 8,
+    "name": "TOP-SELLER",
+    "description": "Experience the magic of our top-seller",
+    "imgCover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737409754/eyes_-_1_woiguy.jpg",
+    "imgHover": "https://res.cloudinary.com/dw57gwzru/image/upload/v1737413081/face_xoemx7.jpg"
+  }
+]
