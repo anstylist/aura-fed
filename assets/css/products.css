@@ -1,15 +1,13 @@
 .add-to-cart-button
 {
-    color: var(--au-light-gray) !important;
+    color: var(--au-white) !important;
     border-color: var(--purple-color);
     background-color: var(--purple-color);
-    opacity: 80%;
 }
 
 .add-to-cart-button:hover
 {
-    background-color: var(--purple-color);
-    opacity: 100%;
+    background-color: var(--au-purple-opacity);
 }
 
 .img-container {
@@ -73,4 +71,21 @@
 .offCanvas__minicart_active {
     overflow: hidden;
     position: fixed;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    border-color: var(--au-purple);
+    background-color: var(--au-purple);
+}
+
+.last-units__label {
+    position: absolute;
+    top: 30px;
+    right: -60px;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    transform: rotate(45deg);
+    background-color: var(--au-wine);
+    color: var(--au-white);
+    font-size: small;
 }
