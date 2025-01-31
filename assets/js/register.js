@@ -1,49 +1,104 @@
 const registerForm = document.querySelector('#register-form');
+var errors = false;
 
-registerForm.addEventListener('submit', (event) => {
+//Ocultar mensajes de error al hacer click en cualquier input del formulario
+var inputs = document.getElementsByClassName("form-control");
+for (input of inputs)
+{
+    input.addEventListener('focus', (event) => {
+        errors = false;
+        var errorSpans = document.getElementsByClassName("text-danger");
+        for(span of errorSpans)
+        {
+            span.style.display = "none";
+        }
+    });
+}
+
+registerForm.addEventListener('submit', (event) =>
+{
     event.preventDefault(); // Evita el envío del formulario por defecto
-    var name = document.getElementById("fullname").value;
-    var errors = [];
 
     //Validación campo nombre
+    var name = document.getElementById("fullname").value;
+    var nameErrorSpan = document.getElementById("name-error");
     if (name.length == 0)
     {
-        errors.push("The field name can´t be empty")
+        errors = true;
+        nameErrorSpan.innerText = "The field name can´t be empty";
+        nameErrorSpan.style.display = "block"
     }
 
     //Validación campo telefono
     var phone = document.getElementById("phone").value;
-    if (isNaN(phone) || phone.trim() === "") {
-        errors.push("The field phone should contain numbers only");
+    var phoneErrorSpan = document.getElementById("phone-error");
+    var phoneErrorMessages = '';
+    if (isNaN(phone) || phone.trim() === "")
+    {
+        errors = true;
+        phoneErrorMessages += "The field phone should contain numbers only\n";
     }
 
     if (phone.length < 10 || phone.length <= 0)
     {
-        errors.push("The field phone should have 10 digits at least and can't be empty");
+        errors = true;
+        phoneErrorMessages += "The field phone should have 10 digits at least and can't be empty\n";
+    }
+
+    //Mostrar los errores
+    if(phoneErrorMessages.length > 0)
+    {
+        phoneErrorSpan.innerText = phoneErrorMessages;
+        phoneErrorSpan.style.display = 'block';
     }
 
     //Vlidación campo correo
     var email = document.getElementById("email").value;
+    var emailErrorSpan = document.getElementById("email-error");
     if (!IsValidEmail(email))
     {
-        errors.push("The field email is not valid");
+        errors = true;
+        emailErrorSpan.innerText = "The field email is not valid";
+        emailErrorSpan.style.display = "block";
     }
 
     //validación contraseña
     var password = document.getElementById("password").value;
     var confirmpassword = document.getElementById("confirmpassword").value;
+    var pwdErrorSpan = document.getElementById("pwd-error");
+    var pwdErrorMessages = '';
     if (password.length == 0 || confirmpassword.length == 0)
     {
-        errors.push("The password's fields can´t be empty");
-    }
-    if (confirmpassword != password)
-    {
-        errors.push("The passwordś fields should be equals")
+        errors = true;
+        pwdErrorMessages += "The password's fields can´t be empty";
     }
 
-    if (errors.length > 0)
+    if (confirmpassword != password)
     {
-        displayErrors(errors);
+        errors = true
+        pwdErrorMessages += "The passwordś fields should be equals";
+    }
+
+    //Mostrar los errores
+    if (pwdErrorMessages.length > 0)
+    {
+        pwdErrorSpan .innerText = pwdErrorMessages;
+        pwdErrorSpan.style.display = "block";
+    }
+
+    //Validacion terminos y condiciones
+    var terms = document.getElementById("terms");
+    var termsErrorSpan = document.getElementById("terms-error");
+    if(!terms.checked)
+    {
+        errors = true;
+        termsErrorSpan.innerText = "You should accept the terms and conditions";
+        termsErrorSpan.style.display = "block";
+    }
+
+    if (errors)
+    {
+        hideErrors(errors);
     } else {
         var jsonFormData = {
             "name" : name,
@@ -52,18 +107,18 @@ registerForm.addEventListener('submit', (event) => {
             "password" : password
         }
 
-        displaySuccess(jsonFormData);
+        window.localStorage.setItem(email, JSON.stringify(jsonFormData));
+        displaySuccess()
     }
 });
 
-function displaySuccess(jsonData)
+function displaySuccess()
 {
     var successContainer = document.getElementById("successContainer");
     successContainer.style.display = "block";
 
     var success = document.getElementById("success");
-    var html = '<h3>Registro Exitoso</h3>\n' +
-        '<span><pre>'+ JSON.stringify(jsonFormData, null, 2) +'</pre></span>';
+    var html = '<h3>Registro Exitoso</h3>\n';
 
     success.innerHTML = html;
 
@@ -72,21 +127,14 @@ function displaySuccess(jsonData)
     }, 4000);
 }
 
-function displayErrors(errors)
+function hideErrors()
 {
-    var html = "";
-    var errorsDiv = document.getElementById("errors");
-    errorsDiv.style.display = "block";
-    for (const error of errors)
-    {
-        html += '<div class="alert alert-danger" role="alert">\n' +
-             error  +
-            '</div>';
-    }
-    errorsDiv.innerHTML = html;
-
+    var errorSpans = document.getElementsByClassName("text-danger");
     setTimeout(function() {
-        errorsDiv.style.display = 'none';
+        for(span of errorSpans)
+        {
+            span.style.display = "none";
+        }
     }, 4000);
 }
 

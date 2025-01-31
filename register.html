@@ -377,6 +377,7 @@
                 <nav class="breadcrumb__content">
                     <ul class="breadcrumb__content--menu d-flex ">
                         <li class="breadcrumb__content--menu__items"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb__content--menu__items"><span>Register</span></li>
                     </ul>
                 </nav>
             </div>
@@ -417,14 +418,17 @@
                         <div class="mb-3">
                             <label for="fullname" class="form-label">Full Name</label>
                             <input type="text" class="form-control" name="fullname" id="fullname">
+                            <span class="text-danger" id="name-error" style="display: none"></span>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="tel" class="form-control" name="phone" id="phone">
+                            <span class="text-danger" id="phone-error" style="display: none"></span>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control" name="email" id="email">
+                            <span class="text-danger" id="email-error" style="display: none"></span>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
@@ -433,19 +437,21 @@
                         <div class="mb-3">
                             <label for="confirmpassword" class="form-label">Confirm password</label>
                             <input type="password" class="form-control" name="confirmpassword" id="confirmpassword">
+                            <span class="text-danger" id="pwd-error" style="display: none"></span>
                         </div>
 
                         <!-- Checkboxes alineados con el texto -->
                         <div class="checkbox-group">
-                            <input type="checkbox" name="terms" id="terms">
+                            <input type="checkbox" class="form-control" name="terms" id="terms">
                             <label for="terms">I agree to the <a href="#" target="_blank">terms and conditions</a></label>
+                            <span class="text-danger" id="terms-error" style="display: none"></span>
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" name="marketing" id="marketing">
+                            <input type="checkbox" class="form-control" name="marketing" id="marketing">
                             <label for="marketing">I want to receive emails about brand updates and offers</label>
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Register</button>
+                        <button class="btn btn-primary" type="submit" id="register">Register</button>
                     </form>
                 </div>
             </div>
@@ -507,7 +513,7 @@
                             </svg>
                         </h2>
                         <ul class="footer__widget--menu footer__widget--inner">
-                            <li class="footer__widget--menu__list footer__widget--menu__active">
+                            <li class="footer__widget--menu__list ">
                                 <a class="footer__widget--menu__text" href="contact-us.html">Contact Us</a>
                             </li>
                             <li class="footer__widget--menu__list ">
@@ -524,6 +530,9 @@
                             </li>
                             <li class="footer__widget--menu__list">
                                 <a class="footer__widget--menu__text" href="login.html">Home</a>
+                            </li>
+                            <li class="footer__widget--menu__list footer__widget--menu__active">
+                                <a class="footer__widget--menu__text" href="register.html">Register</a>
                             </li>
                         </ul>
                     </div>
