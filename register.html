@@ -387,6 +387,7 @@
 <!-- End breadcrumb section -->
 
 <main>
+
 <!-- Start categories section -->
 <div class="container-fluid mt-4 mb-4">
     <div id="categories" class="row row-cols-5 justify-content-center mt-5">
@@ -398,22 +399,18 @@
 </main>
 
 <!-- Start register section -->
-
 <section class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
         <div class="container-fluid" id="errors"></div>
 
         <div class="container-fluid" id="successContainer" style="display: none">
-            <div class="alert alert-success" role="alert" id="success">
-
-            </div>
+            <div class="alert alert-success" role="alert" id="success"></div>
         </div>
 
         <div class="container">
             <div class="register-wrapper">
-                <h1 class="register-form-title">Register</h1>
-
                 <div class="register-form-container">
+                    <h1 class="register-form-title">Register</h1>
                     <form id="register-form">
                         <div class="mb-3">
                             <label for="fullname" class="form-label">Full Name</label>
@@ -440,26 +437,28 @@
                             <span class="text-danger" id="pwd-error" style="display: none"></span>
                         </div>
 
-                        <!-- Checkboxes alineados con el texto -->
+                        <!-- Checkboxes alineados correctamente -->
                         <div class="checkbox-group">
-                            <input type="checkbox" class="form-control" name="terms" id="terms">
+                            <input type="checkbox" name="terms" id="terms">
                             <label for="terms">I agree to the <a href="#" target="_blank">terms and conditions</a></label>
                             <span class="text-danger" id="terms-error" style="display: none"></span>
                         </div>
                         <div class="checkbox-group">
-                            <input type="checkbox" class="form-control" name="marketing" id="marketing">
+                            <input type="checkbox" name="marketing" id="marketing">
                             <label for="marketing">I want to receive emails about brand updates and offers</label>
                         </div>
 
-                        <button class="btn btn-primary" type="submit" id="register">Register</button>
+                        <!-- Botón centrado -->
+                        <div class="button-container">
+                            <button class="btn btn-primary" type="submit" id="register">Register</button>
+                        </div>
+
                     </form>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
-
 <!-- End register section -->
 
 <!-- Start footer section -->
@@ -621,7 +620,6 @@
 <!-- Customscript js -->
 <script src="assets/js/script.js"></script>
 <script src="assets/js/register.js"></script>
-
 
 </body>
 </html>
