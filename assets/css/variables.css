@@ -2,6 +2,7 @@
 
 :root {
   --au-black:#000000;
+  --au-white:#fff;
   --primary-color:#000000;
   --au-gray:#555555;
   --au-light-gray:#cccccc;
@@ -12,7 +13,8 @@
   --au-brown-light: #C9B8A7;
   --au-brown-shadow: rgba(201, 184, 167, 0.25);
   --purple-color: #773875; 
-  --au-purple: #773875; 
+  --au-purple: #773875;
+  --au-purple-opacity: #773875cc; 
   --hover-color: #6E2139;
   --au-wine: #6E2139;
   --aqua-color: #52B194;

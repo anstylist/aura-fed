@@ -12552,3 +12552,15 @@ input[type=range]::-moz-range-track {
   background-color: var(--au-brown-light);
   border-color: var(--au-brown-light);
 }
+
+/* toasts */
+
+.text-bg-success {
+  background-color: var(--au-green) !important;
+}
+
+.toast-container {
+  z-index: 99999 !important;
+  bottom: 2rem;
+  right: 2rem;
+}
