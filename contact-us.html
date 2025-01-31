@@ -159,15 +159,17 @@
                                 </a>
                             </li>
                             <li class="header__account--items header__minicart--items">
-                                <a class="header__account--btn minicart__open--btn text-white" href="javascript:void(0)" data-offcanvas>
+                                <button class="header__account--btn minicart__open--btn text-white" data-offcanvas>
                                     <span class="header__account--btn__icon">
-                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>  
+                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
                                     </span>
                                     <span class="visually-hidden">Shopping Cart</span>
-                                    <span class="items__count">2</span> 
-                                </a>
+                                    <span id="cart-count" class="items__count cart-count">0</span>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -273,46 +275,8 @@
                 </div>
                 <p class="minicart__header--desc">The Beauty and Cosmetic products are limited</p>
             </div>
-            <div class="minicart__product">
-                
-                <div class="minicart__product--items d-flex">
-                    <div class="minicart__thumb">
-                        <a href="product-details.html"><img src="https://res.cloudinary.com/dw57gwzru/image/upload/v1737677093/download_zeflik.jpg" alt="prduct-img"></a>
-                    </div>
-                    <div class="minicart__text">
-                        <h4 class="minicart__subtitle"><a href="product-details.html">Intense Lipstick
-                          </a></h4>
-                        <div class="minicart__price">
-                            <span class="minicart__current--price">$15000</span>
-                            <span class="minicart__old--price">$30000</span>
-                        </div>
-                        <div class="minicart__text--footer d-flex align-items-center">
-                            <div class="quantity__box minicart__quantity">
-                                <button type="button" class="quantity__value decrease" aria-label="quantity value" value="Decrease Value">-</button>
-                                <label>
-                                    <input type="number" class="quantity__number" value="1" data-counter />
-                                </label>
-                                <button type="button" class="quantity__value increase" aria-label="quantity value" value="Increase Value">+</button>
-                            </div>
-                            <button class="minicart__product--remove" type="button" aria-label="Remove">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                  </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="minicart__amount">
-                <div class="minicart__amount_list d-flex justify-content-between">
-                    <span>Sub Total:</span>
-                    <span><b>$240.00</b></span>
-                </div>
-                <div class="minicart__amount_list d-flex justify-content-between">
-                    <span>Total:</span>
-                    <span><b>$240.00</b></span>
-                </div>
-            </div>
+            <div id="minicart__products-list" class="minicart__products-list"></div>
+            <div id="minicart__products-payment" class="minicart__products-payment"></div>
             <div class="minicart__conditions text-center">
                 <input class="minicart__conditions--input" id="accept" type="checkbox">
                 <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.html">Privacy Policy</a></label>
@@ -323,7 +287,6 @@
             </div>
         </div>
         <!-- End offCanvas minicart -->
-   
         <!-- Start search box area -->
         <div class="predictive__search--box ">
             <div class="predictive__search--box__inner">
@@ -520,6 +483,14 @@
    
     <!-- Customscript js -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
+
+        // Setear los valores iniciales cuando hay productos ya agregados al carrito (localstorage)
+        updateProductsCounter(productsInCart)
+        renderShoppingCart(productsInCart)
+    </script>
   
 </body>
 </html>
