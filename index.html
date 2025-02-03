@@ -113,7 +113,7 @@
                                 <a class="header__menu--link" href="#">Home</a>
                             </li>
                             <li class="header__menu--items">
-                                <a class="header__menu--link" href="#">Categories
+                                <a class="header__menu--link" href="./products.html">Products
                                     <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
                                         <path  d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                                     </svg>
@@ -165,14 +165,17 @@
                         </li>
 
                         <li class="header__account--items header__minicart--items">
-                            <a class="header__account--btn minicart__open--btn text-white" href="javascript:void(0)" data-offcanvas>
-                                    <span class="header__account--btn__icon">
-                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
+                            <button class="header__account--btn minicart__open--btn text-white" data-offcanvas>
+                                <span class="header__account--btn__icon">
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
                                 <span class="visually-hidden">Shopping Cart</span>
-                                <span class="items__count">2</span>
+                                <span id="cart-count" class="items__count cart-count">0</span>
+                            </button>
                             </a>
                         </li>
                     </ul>
@@ -197,7 +200,7 @@
 
                     </li>
                     <li class="offcanvas__menu_li">
-                        <a class="offcanvas__menu_item" href="#">Categories</a>
+                        <a class="offcanvas__menu_item" href="./products.html">Products</a>
                         <ul class="offcanvas__sub_menu">
                             <li class="offcanvas__sub_menu_li">
                                 <a href="#" class="offcanvas__sub_menu_item">Lips</a>
@@ -547,7 +550,13 @@
 <!-- Customscript js -->
 <script src="assets/js/script.js"></script>
 <script src="assets/js/categories.js"></script>
+<script>
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
 
+    // Setear los valores iniciales cuando hay productos ya agregados al carrito (localstorage)
+    updateProductsCounter(productsInCart)
+    renderShoppingCart(productsInCart)
+</script>
 
 </body>
 </html>
