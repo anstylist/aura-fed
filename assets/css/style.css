@@ -894,7 +894,7 @@ select {
 }
 
 .bg__primary {
-  background: var(--primary-color);
+  background: var(--au-black);
 }
 
 .bg__secondary {
