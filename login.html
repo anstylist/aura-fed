@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 
@@ -296,7 +297,7 @@
                 <nav class="breadcrumb__content">
                     <ul class="breadcrumb__content--menu d-flex ">
                         <li class="breadcrumb__content--menu__items"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb__content--menu__items"><span>Register</span></li>
+                        <li class="breadcrumb__content--menu__items"><span>Login</span></li>
                     </ul>
                 </nav>
             </div>
@@ -307,17 +308,11 @@
 
 <main>
 
-<!-- Start categories section -->
-<div class="container-fluid mt-4 mb-4">
-    <div id="categories" class="row row-cols-5 justify-content-center mt-5">
-    </div>
-</div>
 
-<!-- End categories section -->
 
 </main>
 
-<!-- Start register section -->
+<!-- Start login section -->
 <section class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
         <div class="container-fluid" id="errors"></div>
@@ -326,50 +321,29 @@
             <div class="alert alert-success" role="alert" id="success"></div>
         </div>
 
-        <div class="container">
-            <div class="register-wrapper">
-                <div class="register-form-container">
-                    <h1 class="register-form-title">Register</h1>
-                    <form id="register-form">
+        <div class="container-login">
+            <div class="-wrapper">
+                <div class="login-form-container">
+                    <h1 class="register-form-title">Login</h1>
+                    <div id="result-message" class="result-message" ></div>
+                    <form id="login-form">
                         <div class="mb-3">
-                            <label for="fullname" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" name="fullname" id="fullname">
-                            <span class="text-danger" id="name-error" style="display: none"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" name="phone" id="phone">
-                            <span class="text-danger" id="phone-error" style="display: none"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
+                            <label for="email" class="form-label-login">E-mail</label>
                             <input type="email" class="form-control" name="email" id="email">
-                            <span class="text-danger" id="email-error" style="display: none"></span>
+                            <span class="text-danger" id="email-error"></span>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label-login">Password</label>
                             <input type="password" class="form-control" name="password" id="password">
                         </div>
-                        <div class="mb-3">
-                            <label for="confirmpassword" class="form-label">Confirm password</label>
-                            <input type="password" class="form-control" name="confirmpassword" id="confirmpassword">
-                            <span class="text-danger" id="pwd-error" style="display: none"></span>
+                        <div>
+                          <a href="">Sign up</a>
+                          <span>/</span>
+                          <a href="/register.html">Register</a>
                         </div>
-
-                        <!-- Checkboxes alineados correctamente -->
-                        <div class="checkbox-group">
-                            <input type="checkbox" name="terms" id="terms">
-                            <label for="terms">I agree to the <a href="#" target="_blank">terms and conditions</a></label>
-                            <span class="text-danger" id="terms-error" style="display: none"></span>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" name="marketing" id="marketing">
-                            <label for="marketing">I want to receive emails about brand updates and offers</label>
-                        </div>
-
-                        <!-- Botón centrado -->
+                        <!-- login-button -->
                         <div class="button-container">
-                            <button class="btn btn-primary" type="submit" id="register">Register</button>
+                            <button class="btn btn-primary" type="submit" id="register">Login</button>
                         </div>
 
                     </form>
@@ -538,7 +512,7 @@
 
 <!-- Customscript js -->
 <script src="assets/js/script.js"></script>
-<script src="assets/js/register.js"></script>
+<script src="assets/js/login.js"></script>
 
 </body>
 </html>
