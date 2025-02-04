@@ -42,8 +42,11 @@ function validate(email, password) {
 
   if (foundUser) {
     localStorage.setItem("loggedInUser", JSON.stringify(foundUser))
-    alert.classList.add("alert-success")
-    alert.innerText = "Successful login"
+    alert.classList.add("alert alert-success alert-dismissible fade show")
+    alert.innerHTML = `
+      Successful login
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `
 
     resultMessageDiv.appendChild(alert)
 
@@ -52,7 +55,10 @@ function validate(email, password) {
     }, 2000)
   } else {
     alert.classList.add("alert-danger")
-    alert.innerText = "Invalid credential"
+    alert.innerHTML = `
+      Invalid credentials
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `
     document.querySelector('#email').value = ""
     document.querySelector('#password').value = ""
 
