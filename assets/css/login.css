@@ -1,0 +1,11 @@
+body::before { 
+  background: url('https://res.cloudinary.com/dw57gwzru/image/upload/v1738630106/portrait-3657966_1920_hiffsb.jpg')
+}
+
+
+.result-message{
+  height: 70px;
+  margin-top: 1.5rem;
+}
+
+

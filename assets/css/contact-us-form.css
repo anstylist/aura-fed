@@ -137,3 +137,17 @@
 .intel{
     text-align: center;
 }
+
+.btn-primary {
+    background-color: rgba(94, 110, 96);
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgba(94, 110, 96, 0.9);
+}

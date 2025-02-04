@@ -30,9 +30,7 @@ p.description {
   opacity: 1; 
 }
 
-.about__Section {
-  background-color: var(--primary60-color);
-}
+
 
 .team__section.section--padding {
   padding-bottom: var(--space-22-x);
@@ -100,7 +98,7 @@ p.description {
   font-size: var(--subtitle-font-size);
   line-height: calc(var(--subtitle-font-size) + 0.25rem);
   font-weight: var(--headings-weight);
-  color: var(--au-black);
+  color: var(--au-purple);
 }
 
 @media only screen and (min-width: 768px) {
@@ -140,10 +138,10 @@ p.description {
 
 .about__experience--text {
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 83%;
+  right: 155px;
   border: 1px solid var(--secondary-color);
-  background: var(--body-background-color);
+  background: var(--primary60-color);
   border-radius: 0.5rem;
   -webkit-transform: translatey(-50%);
           transform: translatey(-50%);
@@ -154,6 +152,8 @@ p.description {
 @media only screen and (min-width: 768px) {
   .about__experience--text {
     width: 11rem;
+    top: 87%;
+
   }
 }
 
@@ -161,26 +161,35 @@ p.description {
   .about__experience--text {
     padding: 1.5rem;
     width: 15rem;
+    right: 58%;
+    top: 91%;
+}
+
   }
 
   .about-img{
     width: 100%;
     max-width: 100%;
   }
-}
+
 
 @media only screen and (min-width: 1366px) {
   .about__experience--text {
     width: 16rem;
     padding: 2rem;
+    top: 91%;
+
   }
 }
 
 @media only screen and (max-width: 575px) {
   .about__experience--text {
-    left: 50%;
+    left: 17%;
+    top: 79%;
+    
     -webkit-transform: translatex(-50%);
             transform: translatex(-50%);
+    
   }
 }
 
@@ -209,13 +218,13 @@ p.description {
 @media only screen and (min-width: 1366px) {
   .about__experience--years {
     font-size: 3rem;
-    line-height: 4rem;
   }
 }
 
 .about__experience--years__inner {
   font-family: var(--primary-font);
-  font-size: var(--title-font-size);
+  font-size: 60px;
+  color: var(--au-green);
 }
 
 .about__experience--title {

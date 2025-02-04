@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 
@@ -51,6 +52,7 @@
                     </span>
             </div>
         </div>
+
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
@@ -97,10 +99,10 @@
                     <nav class="header__menu--navigation">
                         <ul class="header__menu--wrapper d-flex">
                             <li class="header__menu--items">
-                                <a class="header__menu--link" href="./index.html">Home</a>
+                                <a class="header__menu--link" href="#">Home</a>
                             </li>
                             <li class="header__menu--items">
-                                <a class="header__menu--link" href="#">Categories
+                                <a class="header__menu--link" href="/products.html">Products
                                     <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12" height="7.41" viewBox="0 0 12 7.41">
                                         <path  d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                                     </svg>
@@ -152,15 +154,17 @@
                         </li>
 
                         <li class="header__account--items header__minicart--items">
-                            <a class="header__account--btn minicart__open--btn text-white" href="javascript:void(0)" data-offcanvas>
-                                    <span class="header__account--btn__icon">
-                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </span>
+                            <button class="header__account--btn minicart__open--btn text-white" data-offcanvas>
+                                <span class="header__account--btn__icon">
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
                                 <span class="visually-hidden">Shopping Cart</span>
-                                <span class="items__count">2</span>
-                            </a>
+                                <span id="cart-count" class="items__count cart-count">0</span>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -246,7 +250,7 @@
                     <span class="offcanvas__sticky--toolbar__icon">
                         <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18.51" height="17.443" viewBox="0 0 448 512"><path d="M416 32H32A32 32 0 0 0 0 64v384a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-16 48v152H248V80zm-200 0v152H48V80zM48 432V280h152v152zm200 0V280h152v152z"></path></svg>
                         </span>
-                    <span class="offcanvas__sticky--toolbar__label">Categories</span>
+                    <span class="offcanvas__sticky--toolbar__label">Products</span>
                 </a>
             </li>
             <li class="offcanvas__sticky--toolbar__list ">
@@ -289,7 +293,7 @@
                 <nav class="breadcrumb__content">
                     <ul class="breadcrumb__content--menu d-flex ">
                         <li class="breadcrumb__content--menu__items"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb__content--menu__items"><span>Register</span></li>
+                        <li class="breadcrumb__content--menu__items"><span>Login</span></li>
                     </ul>
                 </nav>
             </div>
@@ -300,69 +304,42 @@
 
 <main>
 
-<!-- Start categories section -->
-<div class="container-fluid mt-4 mb-4">
-    <div id="categories" class="row row-cols-5 justify-content-center mt-5">
-    </div>
-</div>
 
-<!-- End categories section -->
 
 </main>
 
-<!-- Start register section -->
+<!-- Start login section -->
 <section class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
+    <div class="col-6 col-sm-5 col-md-6 col-lg-4">
         <div class="container-fluid" id="errors"></div>
 
         <div class="container-fluid" id="successContainer" style="display: none">
             <div class="alert alert-success" role="alert" id="success"></div>
         </div>
 
-        <div class="container">
-            <div class="register-wrapper">
-                <div class="register-form-container">
-                    <h1 class="register-form-title">Register</h1>
-                    <form id="register-form">
+        <div class="container-login">
+            <div class="-wrapper">
+                <div class="login-form-container">
+                    <h1 class="register-form-title">Welcome to Aura</h1>
+                    <div id="result-message" class="result-message" ></div>
+                    <form id="login-form">
                         <div class="mb-3">
-                            <label for="fullname" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" name="fullname" id="fullname">
-                            <span class="text-danger" id="name-error" style="display: none"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" name="phone" id="phone">
-                            <span class="text-danger" id="phone-error" style="display: none"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
+                            <label for="email" class="form-label-login">E-mail</label>
                             <input type="email" class="form-control" name="email" id="email">
-                            <span class="text-danger" id="email-error" style="display: none"></span>
+                            <span class="text-danger" id="email-error"></span>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label-login">Password</label>
                             <input type="password" class="form-control" name="password" id="password">
                         </div>
-                        <div class="mb-3">
-                            <label for="confirmpassword" class="form-label">Confirm password</label>
-                            <input type="password" class="form-control" name="confirmpassword" id="confirmpassword">
-                            <span class="text-danger" id="pwd-error" style="display: none"></span>
+                        <div>
+                            <span>Don't you have an account?
+                                <a href="register.html">Create</a>
+                            </span>
                         </div>
-
-                        <!-- Checkboxes alineados correctamente -->
-                        <div class="checkbox-group">
-                            <input type="checkbox" name="terms" id="terms">
-                            <label for="terms">I agree to the <a href="#" target="_blank">terms and conditions</a></label>
-                            <span class="text-danger" id="terms-error" style="display: none"></span>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" name="marketing" id="marketing">
-                            <label for="marketing">I want to receive emails about brand updates and offers</label>
-                        </div>
-
-                        <!-- Botón centrado -->
+                        <!-- login-button -->
                         <div class="button-container">
-                            <button class="btn btn-primary" type="submit" id="register">Register</button>
+                            <button class="btn btn-primary" type="submit" id="login">Login</button>
                         </div>
 
                     </form>
@@ -424,6 +401,9 @@
                             </svg>
                         </h2>
                         <ul class="footer__widget--menu footer__widget--inner">
+                            <li class="footer__widget--menu__list">
+                                <a class="footer__widget--menu__text" href="login.html">Home</a>
+                            </li>
                             <li class="footer__widget--menu__list ">
                                 <a class="footer__widget--menu__text" href="contact-us.html">Contact Us</a>
                             </li>
@@ -436,13 +416,11 @@
                             <li class="footer__widget--menu__list">
                                 <a class="footer__widget--menu__text" href="cart.html">Shopping Cart</a>
                             </li>
-                            <li class="footer__widget--menu__list">
+                            <li class="footer__widget--menu__list footer__widget--menu__active">
                                 <a class="footer__widget--menu__text" href="login.html">Login</a>
                             </li>
-                            <li class="footer__widget--menu__list">
-                                <a class="footer__widget--menu__text" href="login.html">Home</a>
-                            </li>
-                            <li class="footer__widget--menu__list footer__widget--menu__active">
+                         
+                            <li class="footer__widget--menu__list ">
                                 <a class="footer__widget--menu__text" href="register.html">Register</a>
                             </li>
                         </ul>
@@ -531,7 +509,7 @@
 
 <!-- Customscript js -->
 <script src="assets/js/script.js"></script>
-<script src="assets/js/register.js"></script>
+<script src="assets/js/login.js"></script>
 
 </body>
 </html>

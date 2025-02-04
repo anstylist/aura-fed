@@ -132,12 +132,12 @@ a:focus {
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--au-purple);
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--au-purple-80);
 }
 
 button,
@@ -486,9 +486,7 @@ hr {
   opacity: 0;
   position: absolute;
   top: 0;
-  -webkit-transform: rotateY(-90deg);
-          transform: rotateY(-90deg);
-  -webkit-animation: letters-loading 5s infinite;
+  
 }
 
 .ctn-preloader .animation-preloader .txt-loading .letters-loading {
@@ -527,7 +525,7 @@ hr {
 }
 
 .ctn-preloader .loader-section {
-  background: var(--primary-color);
+  background: var(--au-white);
   height: 100%;
   position: fixed;
   top: 0;
