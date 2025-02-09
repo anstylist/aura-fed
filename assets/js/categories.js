@@ -29,7 +29,7 @@ function renderCategories(data)
 
         let style = document.createElement("style");
         style.innerHTML = `
-            .${hoverClass}:hover {
+            .makeup-card-minimal:hover .${hoverClass} {
                 background-image: url('${data[i].imgHover}');
                 background-size: cover;
                 background-position: center;

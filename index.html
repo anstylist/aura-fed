@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="assets/css/categories.css">
     <link rel="stylesheet" href="assets/css/cart.css">
     <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/carrusel.css">
+
+
+
+
 
 
 </head>
@@ -327,14 +332,47 @@
 </section>
 <!-- End breadcrumb section -->
 
-<main>
+<!-- Carousel -->
+
+<div id="carouselExampleIndicators" class="carousel slide navbar-spacing h-75" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://res.cloudinary.com/dw57gwzru/image/upload/v1738984278/Untitled_design_1_imefgs.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dw57gwzru/image/upload/v1738983827/Untitled_design_lwefem.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dw57gwzru/image/upload/v1738984491/FACE-15_q3rsbv.png" class="d-block w-100" alt="..." />
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- End carousel section -->
+
 <!-- Start categories section -->
+<main>
 <div class="container-fluid mt-4 mb-4">
     <div id="categories" class="row row-cols-5 justify-content-center mt-5">
     </div>
 </div>
-<!-- End categories section -->
 </main>
+<!-- End categories section -->
 
 <!-- Start footer section -->
 <footer class="footer__section footer__bg">

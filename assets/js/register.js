@@ -108,7 +108,7 @@ registerForm.addEventListener('submit', (event) =>
         }
 
         window.localStorage.setItem(email, JSON.stringify(jsonFormData));
-        displaySuccess()
+        window.location.href = window.location.href.replace("register.html", "login.html");
     }
 });
 

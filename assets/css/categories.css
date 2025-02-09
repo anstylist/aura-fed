@@ -173,10 +173,16 @@
     color: var(--bg-light-dark-color);
 
 }
+
+.card {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Mantiene la sombra */
+}
+
 .card-img-top {
     width: 100%; /* Que ocupe todo el ancho del contenedor */
     height: 400px; /* Altura fija para todas las imágenes */
     overflow: hidden; /* Evita que las imágenes desborden */
+    border: 0px;
 }
 
 .card-img-top img {
