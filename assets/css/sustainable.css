@@ -1,0 +1,18 @@
+.sustainable-img{
+    max-width: 100%;
+    height: 345px;
+    width: 73%;
+}
+
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.sustainable-text-container {
+    height: 700px;
+}
+
+.text-paragraph{
+    color: var(--foreground-color) !important
+}

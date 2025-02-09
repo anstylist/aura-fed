@@ -191,3 +191,9 @@
     object-fit: cover; /* Recorta la imagen para que llene sin deformarse */
     display: block;
 }
+
+.category-title {
+    color: var(--foreground-color) !important
+;
+
+}

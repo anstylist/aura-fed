@@ -15,7 +15,7 @@ function renderCategories(data)
                                '<img class="product-image" src="' + data[i].imgCover + '">\n'+
                             '</div>\n'+
                             '<div class="card-body card-content pt-1 pb-0">\n'+
-                                '<h4 class="fs-5 fw-bold">' + data[i].name + '</h4>\n'+
+                                '<h4 class="fs-5 fw-bold category-title">' + data[i].name + '</h4>\n'+
                                 '<p class="about__content--title--np--secundary">' + data[i].description + '</p>\n'+
                             '</div>\n'+
                           '</div>';
