@@ -10,7 +10,7 @@ function renderCategories(data)
 
     for (var i = 0; i < data.length; i++)
     {
-        categoriesHtml += '<div id="cat' + data[i].id + '" class="card makeup-card-minimal me-5 ps-0 pe-0 mt-4">\n' +
+        categoriesHtml += '<div id="cat' + data[i].id + '" class="card makeup-card-minimal me-5 ps-0 pe-0 mt-4" onclick="navigate(\''  + data[i].name + '\')">\n' +
                             '<div class="card-img-top card-image" id="img-' + data[i].id + '">\n' +
                                '<img class="product-image" src="' + data[i].imgCover + '">\n'+
                             '</div>\n'+
@@ -38,6 +38,12 @@ function renderCategories(data)
         document.head.appendChild(style);
 
         cardImage.classList.add(hoverClass);
+    }
+}
+
+function navigate(category) {
+    if (category) {
+        window.location.href = 'products.html?category=' + encodeURIComponent(category);
     }
 }
 
