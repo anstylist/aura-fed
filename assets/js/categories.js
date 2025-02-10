@@ -10,12 +10,12 @@ function renderCategories(data)
 
     for (var i = 0; i < data.length; i++)
     {
-        categoriesHtml += '<div id="cat' + data[i].id + '" class="card makeup-card-minimal me-5 ps-0 pe-0 mt-4">\n' +
+        categoriesHtml += '<div id="cat' + data[i].id + '" class="card makeup-card-minimal me-5 ps-0 pe-0 mt-4" onclick="navigate(\''  + data[i].name + '\')">\n' +
                             '<div class="card-img-top card-image" id="img-' + data[i].id + '">\n' +
                                '<img class="product-image" src="' + data[i].imgCover + '">\n'+
                             '</div>\n'+
                             '<div class="card-body card-content pt-1 pb-0">\n'+
-                                '<h4 class="fs-5 fw-bold">' + data[i].name + '</h4>\n'+
+                                '<h4 class="fs-5 fw-bold category-title">' + data[i].name + '</h4>\n'+
                                 '<p class="about__content--title--np--secundary">' + data[i].description + '</p>\n'+
                             '</div>\n'+
                           '</div>';
@@ -38,6 +38,12 @@ function renderCategories(data)
         document.head.appendChild(style);
 
         cardImage.classList.add(hoverClass);
+    }
+}
+
+function navigate(category) {
+    if (category) {
+        window.location.href = 'products.html?category=' + encodeURIComponent(category);
     }
 }
 
