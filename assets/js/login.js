@@ -42,7 +42,8 @@ function validate(email, password) {
 
   if (foundUser) {
     localStorage.setItem("loggedInUser", JSON.stringify(foundUser))
-    alert.classList.add("alert alert-success alert-dismissible fade show")
+    alert.classList.add('alert', 'alert-success', 'alert-dismissible', 'fade', 'show')
+  
     alert.innerHTML = `
       Successful login
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -56,8 +57,11 @@ function validate(email, password) {
   } else {
     alert.classList.add("alert-danger")
     alert.innerHTML = `
-      Invalid credentials
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <div class="d-flex justify-content-between"> 
+        Invalid credentials
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
     `
     document.querySelector('#email').value = ""
     document.querySelector('#password').value = ""

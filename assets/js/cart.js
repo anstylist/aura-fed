@@ -70,7 +70,10 @@ function updateStock(product, qty = 1) {
  */
 function updateProductsCounter (productsInCart) {
   const counter = productsInCart.reduce((acc, product) => {
-    return acc + product.qty
+    if (product?.qty) {
+        return acc + product.qty
+    }
+    return acc
   }, 0)
 
   const counterElement = document.querySelector('#cart-count')
@@ -235,6 +238,7 @@ function addEventListenerToShoppingCart(productsInCart) {
                 }
             });
 
+            // TRASH BUTTON
             removeButton.addEventListener("click", function (e) {
                 console.log("-- AP - ", {productsInCart, productIndex, productId});
                 const productToDelete = {

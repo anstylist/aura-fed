@@ -6,7 +6,14 @@
     "description": "This is the most intense lipstick",
     "category": "lips",
     "price": 15000,
-    "stock": 10
+    "stock": 10,
+    "influencer": {
+      "images": [
+        "https://res.cloudinary.com/dw57gwzru/image/upload/v1739149174/e4f4d0bf685c688fd72edd841f5c8edc_hwp4bv.jpg",
+        "https://res.cloudinary.com/dw57gwzru/image/upload/v1739149582/clamy-lipstick-4027732_1280_t7caw6.jpg"
+      ],
+      "video": "https://res.cloudinary.com/dw57gwzru/video/upload/v1739150995/pinterestdownloader.com-1739142392.931501_pdl7hy.mp4"
+    }
   },
   {
     "id": 2,
@@ -24,7 +31,14 @@
     "description": "A nourishing oil for a soft and shiny beard",
     "category": "beard",
     "price": 18000,
-    "stock": 60
+    "stock": 60,
+    "influencer": {
+      "images": [
+        "https://res.cloudinary.com/dw57gwzru/image/upload/v1739168553/cb1ba79b67e74f54d8a614a866b69ece_kyfphd.jpg",
+        "https://res.cloudinary.com/dw57gwzru/image/upload/v1739168554/987642f66892f5d6f890ac8837a2c8bd_h9ythe.jpg"
+      ],
+      "video": "https://res.cloudinary.com/dw57gwzru/video/upload/v1739167763/pinterestdownloader.com-1739167730.643485_nmsrvb.mp4"
+    }
   },
   {
     "id": 4,
@@ -105,6 +119,13 @@
     "description": "Enhances eyelids with colorful, pigments",
     "category": "face",
     "price": 20000,
-    "stock": 98
+    "stock": 98,
+    "influencer": {
+      "images": [
+        "https://res.cloudinary.com/dw57gwzru/image/upload/v1739169093/8ec234bf259bcfd8a5c8c757444add3b_mznl66.jpg",
+        "https://res.cloudinary.com/dw57gwzru/image/upload/v1739178145/1511cae531993f9fd8fa7906fdb1b237_fpjn7b.jpg"
+      ],
+      "video": "https://res.cloudinary.com/dw57gwzru/video/upload/v1739178023/pinterestdownloader.com-1739177996.644996_c4rhgs.mp4"
+    }
   }
 ]
