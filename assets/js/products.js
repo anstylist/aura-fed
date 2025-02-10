@@ -1,27 +1,54 @@
 let json
 
 fetch('assets/js/data/products.json')
-  .then(response => response.text())
-  .then(text => renderProducts(JSON.parse(text)))
-  .catch(error => console.error('Error cargando el archivo JSON:', error))
+    .then(response => response.text())
+    .then(text => renderProducts(JSON.parse(text)))
+    .catch(error => console.error('Error cargando el archivo JSON:', error))
+
+function getCategoryFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('category') ? params.get('category').toLowerCase() : null;
+}
+
+function toggleShowAllButton()
+{
+    const categoryParam = getCategoryFromURL();
+    const button = document.getElementById("showAllCategories");
+
+    if (categoryParam) {
+        button.style.display = "block"; // Mostrar botón si hay una categoría en la URL
+    } else {
+        button.style.display = "none"; // Ocultar botón si no hay filtro aplicado
+    }
+}
+
+document.getElementById("showAllCategories").addEventListener("click", function () {
+    window.location.href = window.location.pathname; // Recarga la página sin parámetros
+});
+
+toggleShowAllButton();
 
 /**
  * It renders all the products in the page as a grid/list
- * 
+ *
  * @param {Product} data Products list
-*/
-function renderProducts (data) {
-  let productsRow = document.getElementById('products')
-  let productsHtml = ''
+ */
+function renderProducts (data)
+{
+    let productsRow = document.getElementById('products');
+    let productsHtml = '';
 
-  const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
+    const categoryParam = getCategoryFromURL();
+    const filteredProducts = categoryParam ? data.filter(product => product.category.toLowerCase() === categoryParam) : data;
 
-  for (var i = 0; i < data.length; i++) {
-    const product = data[i]
-    const qtyInCart = productsInCart.find(item => item.id === product.id)?.qty || 0
-    const actualStock = product.stock-qtyInCart
-    const lastUnits = actualStock > 0 && actualStock <= 10
-    productsHtml += `
+    for (var i = 0; i < filteredProducts.length; i++)
+    {
+        const product = filteredProducts[i]
+        const qtyInCart = productsInCart.find(item => item.id === product.id)?.qty || 0
+        const actualStock = product.stock-qtyInCart
+        const lastUnits = actualStock > 0 && actualStock <= 10
+        productsHtml += `
         <div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="${product.id}">
             ${lastUnits ? `<div class="last-units__label">Last units</div>` : ""}
             <div class="img-container">
@@ -30,7 +57,7 @@ function renderProducts (data) {
             <div class="card-body">
                 <div class="row">
                     <div class="col-6 justify-content-start">
-                        <h4 class="fs-5 fw-bold align-text-bottom">${product.name}</h4>
+                        <h4 class="fs-5 fw-bold align-text-bottom products-title">${product.name}</h4>
                     </div>
                     <div class="col-6 align-middle justify-content-end text-end">
                         <p class="card-text align-text-bottom fw-bold">
@@ -52,18 +79,18 @@ function renderProducts (data) {
             </div>
         </div>
         `
-  }
+    }
 
-  // esta linea indica que ya los productos estan renderizados
-  productsRow.innerHTML = productsHtml
+    // esta linea indica que ya los productos estan renderizados
+    productsRow.innerHTML = productsHtml
 
-  // empezamos agregar eventos a los botones de los productos
-  const addToCartButtons = document.querySelectorAll('.add-to-cart-button')
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', handleAddToCart)
-  })
+    // empezamos agregar eventos a los botones de los productos
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-button')
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', handleAddToCart)
+    })
 
-  // Setear los valores iniciales cuando hay productos ya agregados al carrito (localstorage)
-  updateProductsCounter(productsInCart)
-  renderShoppingCart(productsInCart)
+    // Setear los valores iniciales cuando hay productos ya agregados al carrito (localstorage)
+    updateProductsCounter(productsInCart)
+    renderShoppingCart(productsInCart)
 }
