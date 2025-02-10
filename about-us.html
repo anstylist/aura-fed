@@ -708,6 +708,39 @@
      <!-- Scroll top bar -->
      <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
 
+
+    <!-- Toast messages -->
+    <div class="toast-container position-fixed p-2">
+        <div id="no-products-toast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    No more products available in stock      
+                </div>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                    data-in-minicart
+                ></button>
+            </div>
+        </div>
+        <div id="product-added-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Your product has been successfully added to the shopping cart
+                </div>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                    data-in-minicart
+                ></button>
+            </div>
+        </div>
+    </div>
+
      <!-- All Script JS Plugins here  -->
     <script src="assets/js/vendor/popper.js" defer="defer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
@@ -718,7 +751,6 @@
     <script src="assets/js/cart.js"></script>
     <script>
         const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
-
         // Setear los valores iniciales cuando hay productos ya agregados al carrito (localstorage)
         updateProductsCounter(productsInCart)
         renderShoppingCart(productsInCart)

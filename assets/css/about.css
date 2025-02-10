@@ -141,7 +141,7 @@ p.description {
   top: 83%;
   right: 155px;
   border: 1px solid var(--secondary-color);
-  background: var(--primary60-color);
+  background: var(--au-brown-20);
   border-radius: 0.5rem;
   -webkit-transform: translatey(-50%);
           transform: translatey(-50%);

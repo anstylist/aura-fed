@@ -12562,3 +12562,14 @@ input[type=range]::-moz-range-track {
   bottom: 2rem;
   right: 2rem;
 }
+
+.home__content--title{
+  font-size: var(--subtitle-font-size);
+  line-height: 3rem;
+  font-weight: var(--headings-weight);
+  color: var(--au-purple);
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
+
+}

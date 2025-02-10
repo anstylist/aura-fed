@@ -1,0 +1,186 @@
+
+  
+  /* *********** Feature Banner **************  */
+  #banner-influencers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 80px;
+  }
+  
+  #banner-influencers .banner-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 30%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  #banner-influencers .banner-box .img-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: opacity 200ms ease-in-out;;
+  }
+
+  #banner-influencers .banner-box .img-card.main {
+    opacity: 1;
+  }
+
+  #banner-influencers .banner-box .img-card.hover {
+    opacity: 0;
+  }
+
+  #banner-influencers .banner-box:hover .img-card.main {
+    opacity: 0;
+  }
+
+  #banner-influencers .banner-box:hover .img-card.hover {
+    opacity: 1;
+  }
+  
+  /* #banner-influencers h4 {
+    color: white;
+    font-weight: 900;
+    font-size: 22px;
+  }
+  
+  #banner-influencers h3 {
+    color: #ec544e;
+    font-weight: 800;
+    font-size: 15px;
+  } */
+  
+  #banner-influencers .banner-box:nth-child(2) {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #banner-influencers .banner-box:nth-child(3) {
+    background-size: cover;
+    background-position: center;
+  }
+  #banner-influencers .banner-box:nth-child(1):hover {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 7px #9f9e9e;
+  }
+  
+  #banner-influencers .banner-box:nth-child(2):hover {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 7px #9f9e9e;
+  }
+  
+  #banner-influencers .banner-box:nth-child(3):hover {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 7px #9f9e9e;
+  }
+  
+  .btn-influencers{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left:0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .btn-influencers:hover{
+    background-color: transparent;
+    border: none;
+  }
+
+  .play-icon {
+    width: 60px;
+    height: 60px; 
+    display: block; 
+    margin: 0 auto; 
+    animation: pulse 2s infinite;
+    
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1); 
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1); 
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1); 
+      opacity: 1;
+    }
+  }
+
+  .influencers-modal video {
+    max-height: 558px; 
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-body .row {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .card-img-top {
+    height: 304px;
+    object-fit: cover; 
+  }
+
+  .modal-container-influencers{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  body {
+    transition: filter 0.3s ease; 
+  }
+  
+  body:has(.modal.show) {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .modal-header{
+    border-bottom: none;
+  }
+
+.card-body-influencers{
+  max-height: 500px;
+}
+
+.modal-header-influencers{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.card-influencer{
+  position: relative;
+  border-radius: 0;
+  margin: 0;
+  height: 100%; 
+}
