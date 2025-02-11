@@ -13,6 +13,7 @@ html {
 }
 
 body, html {
+  width: 100vw;
   font-family: var(--primary-font);
   font-weight: var(--body-font-weight);
   font-style: normal;
