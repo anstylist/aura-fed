@@ -107,7 +107,10 @@ registerForm.addEventListener('submit', (event) =>
             "password" : password
         }
 
-        window.localStorage.setItem(email, JSON.stringify(jsonFormData));
+        const existentData = JSON.parse(localStorage.getItem("users")) || [];
+        existentData.push(jsonFormData);
+
+        window.localStorage.setItem("users", JSON.stringify(existentData));
         window.location.href = window.location.href.replace("register.html", "login.html");
     }
 });

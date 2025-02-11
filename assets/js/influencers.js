@@ -36,7 +36,7 @@ function renderInfluencer (data) {
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body modal-container-influencers">
-                <video id="my-video-${i}" src="${product.influencer.video}" controls></video>
+                <video id="my-video-${i}" src="${product.influencer.video}" volume="0.1" controls></video>
                 <div class="col-md-4">
                   <div class="card card-influencer">
                     <img
