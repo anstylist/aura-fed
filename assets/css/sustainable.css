@@ -1,9 +1,3 @@
-.sustainable-img{
-    max-width: 100%;
-    height: 345px;
-    width: 73%;
-}
-
 .text-justify {
     text-align: justify;
     text-justify: inter-word;
@@ -15,4 +9,30 @@
 
 .text-paragraph{
     color: var(--foreground-color) !important
+}
+
+.sustainable-pictures-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sustainable-img__container {
+    position: relative;
+    height: 550px;
+}
+
+.sustainable-img {
+    position: absolute;
+}
+
+.sustainable-img:first-child {
+    height: 100%;
+    top: 5%;
+    left: 20%;
+}
+
+.sustainable-img:last-child {
+    height: 75%;
+    top: 10%;
+    left: 50%;
 }
