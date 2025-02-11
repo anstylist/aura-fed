@@ -1,17 +1,21 @@
 const mockedUser = [
   {
+    name: "Andry",
     email: "andry@gmail.com",
     password: "1234",
   },
   {
+    name: "Paola",
     email: "paola@gmail.com",
     password: "1234",
   },
   {
+    name: "Katherine",
     email: "katherine@gmail.com",
     password: "1234",
   },
   {
+    name: "Brandon",
     email: "brandon@gmail.com",
     password: "1234",
   },
@@ -19,8 +23,11 @@ const mockedUser = [
 
 const formLogin = document.querySelector("#login-form")
 
+const existentData = JSON.parse(localStorage.getItem("users")) || []
+mockedUser.forEach(user => existentData.push(user))
+
 //guardo el json en localstorage
-localStorage.setItem('mockedUser', JSON.stringify(mockedUser))
+localStorage.setItem('users', JSON.stringify(existentData))
 
 
 formLogin.addEventListener('submit', (e)=> {
@@ -33,7 +40,7 @@ formLogin.addEventListener('submit', (e)=> {
 const resultMessageDiv = document.querySelector('#result-message')
 
 function validate(email, password) {
-  const savedUsers = JSON.parse(localStorage.getItem("mockedUser"))
+  const savedUsers = JSON.parse(localStorage.getItem("users"))
 
   const foundUser = savedUsers.find(u => u.email === email && u.password === password)
 

@@ -15,16 +15,14 @@ function toggleShowAllButton()
     const categoryParam = getCategoryFromURL();
     const button = document.getElementById("showAllCategories");
 
+    if (!button) return;
+
     if (categoryParam) {
-        button.style.display = "block"; // Mostrar botón si hay una categoría en la URL
+        button.style.display = "block"; // Mostrar botón para ver todos los productos si hay una categoría en la URL
     } else {
-        button.style.display = "none"; // Ocultar botón si no hay filtro aplicado
+        button.style.display = "none"; // Ocultar botón para ver todos los productos si no hay filtro aplicado
     }
 }
-
-document.getElementById("showAllCategories").addEventListener("click", function () {
-    window.location.href = window.location.pathname; // Recarga la página sin parámetros
-});
 
 toggleShowAllButton();
 
@@ -49,7 +47,7 @@ function renderProducts (data)
         const actualStock = product.stock-qtyInCart
         const lastUnits = actualStock > 0 && actualStock <= 10
         productsHtml += `
-        <div class="card p-0 me-3 bg-light shadow mt-3 card-fixer" id="${product.id}">
+        <div class="card p-0 bg-light shadow me-3 mt-3 card-fixer" id="${product.id}">
             ${lastUnits ? `<div class="last-units__label">Last units</div>` : ""}
             <div class="img-container">
                 <img class="card-img-top h-100" src="${product.img}">
@@ -70,8 +68,8 @@ function renderProducts (data)
                 </div>
                 <div class="row justify-content-center">
                     <button ${actualStock === 0 ? "disabled" : ""} id="product-${product.id}__btn" class="btn add-to-cart-button w-75" data-name="${product.name}"         
-                      data-img="${product.img}" data-price="${product.price}"
-                      data-id="${product.id}" data-category="${product.category}" data-stock="${actualStock}"
+                    data-img="${product.img}" data-price="${product.price}"
+                    data-id="${product.id}" data-category="${product.category}" data-stock="${actualStock}"
                     >
                         ${actualStock === 0 ? "Out of stock" : "Add to cart"}
                     </button>

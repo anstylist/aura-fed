@@ -27,7 +27,6 @@
     position: relative;
     width: 100%;
     max-width: 300px;/* ajusta el tamaño de las tarjetas */
-    margin: 10px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Mantiene la sombra */
