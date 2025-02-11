@@ -25,13 +25,13 @@
     position: absolute;
 }
 
-.sustainable-img:first-child {
+.sustainable-img:nth-child(1) {
     height: 100%;
     top: 5%;
     left: 20%;
 }
 
-.sustainable-img:last-child {
+.sustainable-img:nth-child(2) {
     height: 75%;
     top: 10%;
     left: 50%;
