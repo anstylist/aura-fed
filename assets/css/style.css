@@ -12573,3 +12573,19 @@ input[type=range]::-moz-range-track {
   text-align: center;
 
 }
+/* 
+.header__topbar--info{
+  white-space: nowrap; 
+  overflow: hidden;      
+  position: relative;   
+  animation: scroll-text 20s linear infinite
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%); /* Inicia fuera de la pantalla a la derecha */
+   /* }
+  100% {
+    transform: translateX(-100%); /* Termina fuera de la pantalla a la izquierda */
+   /* } 
+  }  */
