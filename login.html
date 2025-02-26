@@ -492,21 +492,19 @@
                                     <div class="account__login--inner">
                                         <label for="first-name-register" class="form-label">First Name</label>
                                         <input required class="account__login--input form-control" type="text"
-                                            name="first-name-register" id="first-name-register">
+                                            name="first-name-register" id="first-name-register" maxlength="40">
                                         <span class="text-danger" id="name-error" style="display: none"></span>
                                         <label for="last-name" class="form-label">Last Name</label>
                                         <input class="account__login--input form-control" type="text" name="last-name"
-                                            id="last-name">
+                                            id="last-name" maxlength="40">
                                         <label for="email-register" class="form-label">Email</label>
                                         <input required class="account__login--input form-control" type="email"
-                                            name="email-register" id="email-register">
+                                            name="email-register" id="email-register" maxlength="255">
                                         <span class="text-danger" id="email-error" style="display: none"></span>
                                         <label for="password-register" class="form-label">Password</label>
-                                        <!-- <input required class="account__login--input form-control" type="password"
-                                            name="password-register" id="password-register"> -->
                                         <div class="account__login--input input-group form-control mb-3">
                                             <input required class="input-group__item" type="password" name="password-register"
-                                                id="password-register">
+                                                id="password-register" maxlength="100">
                                             <button class="btn btn-secondary" type="button"
                                                 id="show-password__btn" aria-label="Show/Hide Password" data-status="open">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

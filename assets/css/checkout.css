@@ -504,7 +504,7 @@ details > summary::-webkit-details-marker {
 }
 
 .payment__history {
-  margin-top: 2rem;
+  margin-top: 0.75rem;
 }
 
 .payment__history--title {
@@ -619,4 +619,28 @@ details > summary::-webkit-details-marker {
 .payment__history--link:hover{
   background-color: var(--au-purple-opacity);
   border-color: var(--au-purple-opacity);
+}
+
+
+.cart__price--qty {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.cart__table--body__list {
+  vertical-align: top;
+}
+
+.cart__table--body__list .table-actions {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .cart__price {
+      font-size: 1.25rem;
+  }
 }

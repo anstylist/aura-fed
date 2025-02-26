@@ -60,7 +60,7 @@ function handleAddToCart (event) {
  */
 function updateStock(product, qty = 1) {
     const productButton = document.querySelector(`#product-${product.id}__btn`)
-    productButton.setAttribute('data-stock', product.stock - qty)
+    productButton && productButton.setAttribute('data-stock', product.stock - qty)
 }
 
 /**
@@ -167,12 +167,19 @@ function renderShoppingCart(productsInCart) {
             <div class="minicart__amount_list d-flex justify-content-between">
                 <span>Total:</span>
                 <span><b>
-                    $${(subTotal*1.11).toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}
+                    $${(subTotal).toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}
                 </b></span>
             </div>
-        </div>`
+        </div>`;
+
+    console.log("--- AP - Rendered Shopping Cart");
     
-    addEventListenerToShoppingCart(productsInCart)
+    if (typeof renderCheckoutProductsTable === 'function') {
+        console.log("--- AP - Calling renderCheckoutProductsTable if exists...");
+        renderCheckoutProductsTable(productsInCart);
+    }
+    
+    addEventListenerToShoppingCart(productsInCart);
 }
 
 /**

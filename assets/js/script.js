@@ -1024,3 +1024,36 @@ function logout() {
 
   window.location.href = "/login.html"
 }
+
+function formToJson(formId) {
+  const form = document.getElementById(formId);
+  if (!form) {
+    console.error(`Form with ID '${formId}' not found.`);
+    return null;
+  }
+
+  const formData = {};
+  const elements = form.querySelectorAll('input, select, textarea');
+
+  elements.forEach(element => {
+    const name = element.name;
+    if (name) {
+      if (element.type === 'radio') {
+        if (element.checked) {
+          formData[name] = element.value;
+        }
+      } else if (element.type === 'checkbox') {
+        if (!formData[name]) {
+          formData[name] = [];
+        }
+        if (element.checked) {
+          formData[name].push(element.value);
+        }
+      } else {
+        formData[name] = element.value;
+      }
+    }
+  });
+
+  return formData;
+}
