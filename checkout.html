@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Aura - Register</title>
+    <title>Aura - Checkout</title>
     <meta name="description" content="Aura Cosmethics">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon"
         href="https://res.cloudinary.com/dw57gwzru/image/upload/v1736704708/favicon_q7dpwu.ico">
 
     <!-- ======= All CSS Plugins here ======== -->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/glightbox.min.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/glightbox.min.css">
 
     <!-- Plugin css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,11 +23,15 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/breadcrumb.css">
-    <link rel="stylesheet" href="/assets/css/cart.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
     <link rel="stylesheet" href="/assets/css/about.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
-
+    <link rel="stylesheet" href="/assets/css/categories.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+    <link rel="stylesheet" href="/assets/css/products.css">
+    <link rel="stylesheet" href="/assets/css/carrusel.css">
+    <link rel="stylesheet" href="/assets/css/home-influencers.css">
+    <link rel="stylesheet" href="/assets/css/sustainable.css">
+    <link rel="stylesheet" href="/assets/css/checkout.css">
 
 </head>
 
@@ -70,7 +74,7 @@
                 <div class="header__topbar--inner style6 d-flex align-items-center justify-content-between">
                     <ul class="header__topbar--info d-none d-lg-flex">
                         <li class="header__info--text text-white">
-                            Customer service:
+                            Good luck with shopping
                         </li>
                         <li class="header__info--text text-white">
                             <span class="text__secondary">Call us</span>
@@ -111,10 +115,10 @@
                         <nav class="header__menu--navigation">
                             <ul class="header__menu--wrapper d-flex">
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="#">Home</a>
+                                    <a class="header__menu--link" href="/index.html">Home</a>
                                 </li>
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="/products.html">Products
+                                    <a class="header__menu--link" href="./products.html">Products
                                         <svg class="menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12"
                                             height="7.41" viewBox="0 0 12 7.41">
                                             <path d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z"
@@ -169,36 +173,60 @@
 
                             <li class="header__account--items logged-user-item">
                                 <a class="header__account--btn d-sm-2-none text-white" href="my-profile.html">
-                                        <span class="header__account--btn__icon">
-                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16 16V14.3333C16 13.4493 15.6049 12.6014 14.9016 11.9763C14.1984 11.3512 13.2446 11 12.25 11H4.75C3.75544 11 2.80161 11.3512 2.09835 11.9763C1.39509 12.6014 1 13.4493 1 14.3333V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M8.5 7.66667C10.5711 7.66667 12.25 6.17428 12.25 4.33333C12.25 2.49238 10.5711 1 8.5 1C6.42893 1 4.75 2.49238 4.75 4.33333C4.75 6.17428 6.42893 7.66667 8.5 7.66667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </span>
+                                    <span class="header__account--btn__icon">
+                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 16V14.3333C16 13.4493 15.6049 12.6014 14.9016 11.9763C14.1984 11.3512 13.2446 11 12.25 11H4.75C3.75544 11 2.80161 11.3512 2.09835 11.9763C1.39509 12.6014 1 13.4493 1 14.3333V16"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M8.5 7.66667C10.5711 7.66667 12.25 6.17428 12.25 4.33333C12.25 2.49238 10.5711 1 8.5 1C6.42893 1 4.75 2.49238 4.75 4.33333C4.75 6.17428 6.42893 7.66667 8.5 7.66667Z"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
                                     <span class="visually-hidden">My Orders</span>
                                 </a>
                             </li>
-    
+
                             <li class="header__account--items logged-user-item">
-                                <a class="header__account--btn d-sm-2-none text-white" href="javascript:logout()">
-                                        <span class="header__account--btn__icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 17 17">
-                                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                                              </svg>
-                                        </span>
+                                <a class="header__account--btn d-sm-2-none text-white" href="javascript:logout()" title="Logout">
+                                    <span class="header__account--btn__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 17 17">
+                                            <path fill-rule="evenodd"
+                                                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                        </svg>
+                                    </span>
                                     <span class="visually-hidden">Logout</span>
                                 </a>
                             </li>
-    
+
+                            <li class="header__account--items guess-user-item">
+                                <a class="header__account--btn d-sm-2-none text-white" href="login.html"  title="Login / Register">
+                                    <span class="header__account--btn__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            fill="currentColor" class="bi bi-key" viewBox="0 0 17 17">
+                                            <path
+                                                d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5" />
+                                            <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                        </svg>
+                                    </span>
+                                    <span class="visually-hidden">Sign In / Register</span>
+                                </a>
+                            </li>
+
                             <li class="header__account--items guess-user-item">
                                 <a class="header__account--btn d-sm-2-none text-white" href="login.html">
-                                        <span class="header__account--btn__icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key" viewBox="0 0 17 17">
-                                                <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/>
-                                                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                                              </svg>
-                                        </span>
+                                    <span class="header__account--btn__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            fill="currentColor" class="bi bi-key" viewBox="0 0 17 17">
+                                            <path
+                                                d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5" />
+                                            <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                        </svg>
+                                    </span>
                                     <span class="visually-hidden">Sign In / Register</span>
                                 </a>
                             </li>
@@ -207,9 +235,10 @@
                                 <button class="header__account--btn minicart__open--btn text-white" data-offcanvas>
                                     <span class="header__account--btn__icon">
                                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z"
-                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.25 7.66667V4.33333C12.25 3.44928 11.8549 2.60143 11.1517 1.97631C10.4484 1.35119 9.49456 1 8.5 1C7.50544 1 6.55161 1.35119 5.84835 1.97631C5.14509 2.60143 4.75 3.44928 4.75 4.33333V7.66667M1.9375 6H15.0625L16 16H1L1.9375 6Z"
+                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </span>
                                     <span class="visually-hidden">Shopping Cart</span>
@@ -289,7 +318,7 @@
                             </span>
                             <span class="offcanvas__account--items__label">Login</span>
                         </a>
-                        <a class="offcanvas__account--items__btn d-flex align-items-center" href="./login.html">
+                        <a class="offcanvas__account--items__btn d-flex align-items-center" href="./register.html">
                             <span class="offcanvas__account--items__icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20.51" height="19.443"
                                     viewBox="0 0 512 512">
@@ -316,7 +345,8 @@
                 <li class="offcanvas__sticky--toolbar__list">
                     <a class="offcanvas__sticky--toolbar__btn" href="index.html">
                         <span class="offcanvas__sticky--toolbar__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="16" viewBox="0 0 22 17">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="16"
+                                viewBox="0 0 22 17">
                                 <path fill="currentColor"
                                     d="M20.9141 7.93359c.1406.11719.2109.26953.2109.45703 0 .14063-.0469.25782-.1406.35157l-.3516.42187c-.1172.14063-.2578.21094-.4219.21094-.1406 0-.2578-.04688-.3515-.14062l-.9844-.77344V15c0 .3047-.1172.5625-.3516.7734-.2109.2344-.4687.3516-.7734.3516h-4.5c-.3047 0-.5742-.1172-.8086-.3516-.2109-.2109-.3164-.4687-.3164-.7734v-3.6562h-2.25V15c0 .3047-.11719.5625-.35156.7734-.21094.2344-.46875.3516-.77344.3516h-4.5c-.30469 0-.57422-.1172-.80859-.3516-.21094-.2109-.31641-.4687-.31641-.7734V8.46094l-.94922.77344c-.11719.09374-.24609.14062-.38672.14062-.16406 0-.30468-.07031-.42187-.21094l-.35157-.42187C.921875 8.625.875 8.50781.875 8.39062c0-.1875.070312-.33984.21094-.45703L9.73438.832031C10.1094.527344 10.5312.375 11 .375s.8906.152344 1.2656.457031l8.6485 7.101559zm-3.7266 6.50391V7.05469L11 1.99219l-6.1875 5.0625v7.38281h3.375v-3.6563c0-.3046.10547-.5624.31641-.7734.23437-.23436.5039-.35155.80859-.35155h3.375c.3047 0 .5625.11719.7734.35155.2344.211.3516.4688.3516.7734v3.6563h3.375z">
                                 </path>
@@ -362,7 +392,10 @@
                 <div class="minicart__header--top d-flex justify-content-between align-items-center">
                     <h3 class="minicart__title"> Shopping Cart</h3>
                     <button class="minicart__close--btn" aria-label="minicart close btn" data-offcanvas>
-                        <svg class="minicart__close--icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                        <svg class="minicart__close--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+                        </svg>
                     </button>
                 </div>
                 <p class="minicart__header--desc">The Beauty and Cosmetic products are limited</p>
@@ -371,11 +404,12 @@
             <div id="minicart__products-payment" class="minicart__products-payment"></div>
             <div class="minicart__conditions text-center">
                 <input class="minicart__conditions--input" id="accept" type="checkbox">
-                <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.html">Privacy Policy</a></label>
+                <label class="minicart__conditions--label" for="accept">I agree with the <a
+                        class="minicart__conditions--link" href="privacy-policy.html">Privacy Policy</a></label>
             </div>
             <div class="minicart__button-group d-flex justify-content-center">
-                <a class="btn btn-primary button-mini-cart" href="/checkout.html">View cart</a>
-                <a class="btn btn-primary button-mini-cart" href="/checkout.html">Checkout</a>
+                <a class="btn btn-primary button-mini-cart" href="checkout.html">View cart</a>
+                <a class="btn btn-primary button-mini-cart" href="checkout.html">Checkout</a>
             </div>
         </div>
         <!-- End offCanvas minicart -->
@@ -419,7 +453,6 @@
                     <nav class="breadcrumb__content">
                         <ul class="breadcrumb__content--menu d-flex ">
                             <li class="breadcrumb__content--menu__items"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb__content--menu__items"><span>Login - Register</span></li>
                         </ul>
                     </nav>
                 </div>
@@ -428,87 +461,176 @@
     </section>
     <!-- End breadcrumb section -->
 
-    <main>
-        <!-- Start login section  -->
-        <div class="login__section section--padding">
 
-            <div class="container">
-                <div class="login__section--inner">
-                    <div class="row row-cols-md-2 row-cols-1">
-                        <div class="col">
-                            <div class="account__login">
-                                <form id="login-form">
-                                    <div class="account__login--header mb-25">
-                                        <h2 class="account__login--header__title mb-15">Login</h2>
-                                        <p class="account__login--header__desc">Login if you are a returning customer.
-                                        </p>
-                                    </div>
-                                    <div class="account__login--inner">
-                                        <label for="email-login" class="form-label">Email</label>
-                                        <input required class="account__login--input form-control" type="email"
-                                            name="email-login" id="email-login">
-                                        <span class="text-danger" id="email-error" style="display: none"></span>
-                                        <label for="password-login" class="form-label">Password</label>
-                                        <input required class="account__login--input form-control" type="password"
-                                            name="password-login" id="password-login">
-                                        <div
-                                            class="account__login--remember__forgot mb-15 d-flex justify-content-between align-items-center">
-                                            <div class="account__login--remember position__relative"></div>
-                                            <button class="account__login--forgot" type="submit">Forgot Your
-                                                Password?</button>
-                                        </div>
-                                        <div class="login-btn__container">
-                                            <button class="btn btn-primary login-btn" type="submit">Login</button>
-                                        </div>
-                                    </div>
-                                </form>
 
+    <!-- Start checkout page area -->
+    <div class="checkout__page--area section--padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-6">
+                    <div class="main checkout__mian">
+                        <form id="checkout-shipping-payment-form" action="#" method="dialog">
+                            <div class="checkout__content--step section__shipping--address">
+                                <div class="checkout__section--header mb-25">
+                                    <h2 class="checkout__header--title h3">Shipping and Payment Details</h2>
+                                </div>
+                                <div class="section__shipping--address__content">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 mb-20">
+                                            <div class="checkout__input--list ">
+                                                <label class="checkout__input--label mb-10" for="address-identifier">
+                                                    Identifier
+                                                    <span class="checkout__input--label__star">*</span>
+                                                </label>
+                                                <input class="checkout__input--field border-radius-5"
+                                                    placeholder="Address Identifier" id="address-identifier" name="identifier"
+                                                    maxlength="50"
+                                                    required
+                                                    type="text"
+                                                    autocomplete="off"
+                                                >
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mb-20">
+                                            <div class="checkout__input--list">
+                                                <label class="checkout__input--label mb-10" for="address-line-1">Address <span
+                                                        class="checkout__input--label__star">*</span></label>
+                                                <input class="checkout__input--field border-radius-5"
+                                                    placeholder="Address" id="address-line-1" name="address1" type="text" required maxlength="100"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-20">
+                                            <div class="checkout__input--list">
+                                                <input class="checkout__input--field border-radius-5"
+                                                    placeholder="Apartment, suite, etc. (optional)" id="address-line-2" name="address2" type="text" maxlength="100"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-20">
+                                            <div class="checkout__input--list">
+                                                <label class="checkout__input--label mb-10" for="city">Town/City <span
+                                                        class="checkout__input--label__star">*</span></label>
+                                                <input class="checkout__input--field border-radius-5" placeholder="City"
+                                                    id="city" name="city" type="text" maxlength="100"
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-20">
+                                            <div class="checkout__input--list">
+                                                <label class="checkout__input--label mb-10" for="country">Country/region
+                                                    <span class="checkout__input--label__star">*</span></label>
+                                                <div class="checkout__input--select select">
+                                                    <select class="checkout__input--select__field border-radius-5"
+                                                        id="country" name="country" required>
+                                                        <option value="US">United States</option>
+                                                        <option value="CO">Colombia</option>
+                                                        <option value="VE">Venezuela</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 mb-20">
+                                            <div class="checkout__input--list">
+                                                <label class="checkout__input--label mb-10" for="postal-code">Postal Code
+                                                    <span class="checkout__input--label__star">*</span></label>
+                                                <input class="checkout__input--field border-radius-5"
+                                                    placeholder="Postal code" id="postal-code" name="zipCode" type="number" maxlength="20" required
+                                                    autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="account__login register">
-                                <form id="register-form">
-                                    <div class="account__login--header mb-25">
-                                        <h2 class="account__login--header__title mb-15">Create an Account</h2>
-                                        <p class="account__login--header__desc">Register here if you are a new customer
-                                        </p>
-                                    </div>
-                                    <div class="account__login--inner">
-                                        <label for="first-name-register" class="form-label">First Name</label>
-                                        <input required class="account__login--input form-control" type="text"
-                                            name="first-name-register" id="first-name-register">
-                                        <span class="text-danger" id="name-error" style="display: none"></span>
-                                        <label for="last-name" class="form-label">Last Name</label>
-                                        <input class="account__login--input form-control" type="text" name="last-name"
-                                            id="last-name">
-                                        <label for="email-register" class="form-label">Email</label>
-                                        <input required class="account__login--input form-control" type="email"
-                                            name="email-register" id="email-register">
-                                        <span class="text-danger" id="email-error" style="display: none"></span>
-                                        <label for="password-register" class="form-label">Password</label>
-                                        <input required class="account__login--input form-control" type="password"
-                                            name="password-register" id="password-register">
-                                        <label for="confirm-password" class="form-label">Confirm Password</label>
-                                        <input required class="account__login--input form-control" type="password"
-                                            name="confirm-password" id="confirm-password">
-                                        <span class="text-danger" id="pwd-error" style="display: none"></span>
-                                        <div class="login-btn__container">
-                                            <button class="btn btn-primary login-btn" type="submit">
-                                                Submit & Register
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-
+                            <div class="order-notes mb-20">
+                                <label class="checkout__input--label mb-10" for="order">Order Notes <span
+                                        class="checkout__input--label__star">*</span></label>
+                                <textarea class="checkout__notes--textarea__field border-radius-5"
+                                    id="order-notes"
+                                    name="orderNotes"
+                                    placeholder="Notes about your order, e.g. special notes for delivery."
+                                    spellcheck="false" maxlength="200"></textarea>
                             </div>
-                        </div>
+                            <button class="checkout__now--btn primary__btn" id="final-checkout__btn" type="submit">
+                                Checkout Now
+                            </button>
+                        </form>
                     </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <aside class="checkout__sidebar sidebar border-radius-10">
+                        <h2 class="checkout__order--summary__title text-center mb-15">Your Order Summary</h2>
+                        <div class="cart__table checkout__product--table">
+                            <table class="cart__table--inner">
+                                <tbody class="cart__table--body" id="cart__table--body">
+                                    <!-- IN SHOPPING CART PRODUCTS LIST -->
+                                    <tr class="cart__table--body__items">
+                                        <td class="cart__table--body__list">
+                                            <div class="cart__product d-flex align-items-center no-products">
+                                                No products added to your shopping cart yet
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="checkout__discount--code">
+                            <form class="d-flex" id="discount-code-form">
+                                <div class="account__login--input input-group form-control mb-3">
+                                    <input required class="input-group__item" type="text" name="discount-code__input"
+                                        id="discount-code__input" placeholder="Type a discount code...">
+                                    <button class="btn btn-secondary" type="submit">
+                                        Apply
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="checkout__total">
+                            <table class="checkout__total--table">
+                                <tbody class="checkout__total--body">
+                                    <tr class="checkout__total--items">
+                                        <td class="checkout__total--title text-left">Subtotal </td>
+                                        <td class="checkout__total--amount text-right" id="checkout-sub-total">
+                                            $0.00
+                                        </td>
+                                    </tr>
+                                    <tr class="checkout__total--items" id="discount-info-section">
+                                        <td class="checkout__total--title text-left">Discount</td>
+                                        <td class="checkout__total--calculated__text text-right" id="checkout-discount">-0%</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="checkout__total--footer">
+                                    <tr class="checkout__total--footer__items">
+                                        <td
+                                            class="checkout__total--footer__title checkout__total--footer__list text-left">
+                                            Total </td>
+                                        <td class="checkout__total--footer__amount checkout__total--footer__list text-right"
+                                            id="checkout-total">$0.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="payment__history">
+                            <h3 class="payment__history--title mb-20">Payment Method</h3>
+                            <ul class="payment__history--inner d-flex">
+                                <li class="payment__history--list">
+                                    <button class="payment__history--link primary__btn"
+                                        type="submit">Cash</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
                 </div>
 
             </div>
         </div>
-        <!-- End login section  -->
+    </div>
+    <!-- End checkout page area -->
+
     </main>
+
+
 
     <!-- Start footer section -->
     <footer class="footer__section footer__bg">
@@ -582,23 +704,24 @@
                             </h2>
                             <ul class="footer__widget--menu footer__widget--inner">
                                 <li class="footer__widget--menu__list ">
-                                    <a class="footer__widget--menu__text" href="index.html">Home</a>
+                                    <a class="footer__widget--menu__text" href="/index.html">Home</a>
                                 </li>
                                 <li class="footer__widget--menu__list">
-                                    <a class="footer__widget--menu__text" href="contact-us.html">Contact Us</a>
+                                    <a class="footer__widget--menu__text" href="/contact-us.html">Contact Us</a>
                                 </li>
                                 <li class="footer__widget--menu__list ">
-                                    <a class="footer__widget--menu__text" href="about-us.html">About Us</a>
+                                    <a class="footer__widget--menu__text" href="/about-us.html">About Us</a>
                                 </li>
                                 <li class="footer__widget--menu__list ">
-                                    <a class="footer__widget--menu__text" href="./products.html">Products</a>
+                                    <a class="footer__widget--menu__text" href="/products.html">Products</a>
                                 </li>
                                 <li class="footer__widget--menu__list">
-                                    <a class="footer__widget--menu__text" href="cart.html">Shopping Cart</a>
+                                    <a class="footer__widget--menu__text" href="/checkout.html">Shopping Cart</a>
                                 </li>
-                                <li class="footer__widget--menu__list footer__widget--menu__active">
-                                    <a class="footer__widget--menu__text" href="login.html">Login - Register</a>
+                                <li class="footer__widget--menu__list">
+                                    <a class="footer__widget--menu__text" href="/login.html">Login - Register</a>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -689,27 +812,41 @@
     </footer>
     <!-- End footer section -->
 
-
     <!-- Toast messages -->
     <div class="toast-container position-fixed p-2">
-        <div id="register-result-toast" class="toast align-items-center text-bg-danger border-0" role="alert"
-            aria-live="assertive" aria-atomic="true" data-bs-delay="20000">
+        <div id="no-products-toast" class="toast align-items-center text-bg-danger border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
-                <div id="message-register-result-toast" class="toast-body"></div>
+                <div class="toast-body">
+                    No more products available in stock
+                </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
                     aria-label="Close" data-in-minicart></button>
             </div>
         </div>
-        <div id="login-result-toast" class="toast align-items-center text-bg-danger border-0" role="alert"
-            aria-live="assertive" aria-atomic="true" data-bs-delay="20000">
+        <div id="product-added-toast" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
-                <div id="message-login-result-toast" class="toast-body"></div>
+                <div class="toast-body">
+                    Your product has been successfully added to the shopping cart
+                </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
                     aria-label="Close" data-in-minicart></button>
             </div>
         </div>
     </div>
 
+    <!-- Toast messages -->
+    <div class="toast-container position-fixed p-2">
+        <div id="checkout-result-toast" class="toast align-items-center text-bg-danger border-0" role="alert"
+            aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+            <div class="d-flex">
+                <div id="message-checkout-result-toast" class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close" data-in-minicart></button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll top bar -->
     <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
@@ -726,17 +863,20 @@
     <script src="assets/js/plugins/glightbox.min.js"></script>
 
     <!-- Customscript js -->
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/services/config.js"></script>
-    <script src="assets/js/services/auth-service.js"></script>
-    <script src="assets/js/login.js"></script>
-    <script src="/assets/js/register.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/services/config.js"></script>
+    <script src="/assets/js/services/categories-service.js"></script>
+    <script src="/assets/js/services/campaigns-service.js"></script>
+    <script src="/assets/js/services/discount-code-service.js"></script>
+    <script src="/assets/js/services/order-service.js"></script>
     <script src="/assets/js/cart.js"></script>
+    <script src="/assets/js/checkout.js"></script>
 
     <script>
-        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
+        const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
         // Setear los valores iniciales cuando hay productos ya agregados al carrito (localstorage)
-        updateProductsCounter(productsInCart)
+        updateProductsCounter(productsInCart);
+        renderCheckoutProductsTable(productsInCart);
         renderShoppingCart(productsInCart)
     </script>
 

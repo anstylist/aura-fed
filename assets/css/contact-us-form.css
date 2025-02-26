@@ -139,7 +139,7 @@
 }
 
 .btn-primary {
-    background-color: rgba(94, 110, 96);
+    /* background-color: rgba(94, 110, 96); */
     padding: 12px;
     font-size: 16px;
     border-radius: 5px;
@@ -148,6 +148,13 @@
     transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: rgba(94, 110, 96, 0.9);
-}
+.btn-contact {
+    background-color: var(--au-purple-opacity);
+    border-color: var(--au-purple-opacity);
+  }
+  
+.btn-contact:hover {
+    background-color: var(--au-purple);
+    border-color: var(--au-purple);
+  }
+  

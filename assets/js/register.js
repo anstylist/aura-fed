@@ -1,8 +1,27 @@
 const registerForm = document.querySelector('#register-form');
-var errors = false;
+const togglePasswdVisibilityBtn = document.querySelector("#show-password__btn");
+const slashEyeIcon = document.querySelector("#slash-eye-icon");
+const openEyeIcon = document.querySelector("#open-eye-icon");
+const passwordInput = document.querySelector("#password-register");
+const registerBtn = document.querySelector("#register-btn");
+
+const validationList = document.getElementById('validationList');
+const lengthItem = document.getElementById('length');
+const letterItem = document.getElementById('letter');
+const numberItem = document.getElementById('number');
+const specialItem = document.getElementById('special');
+
+let errors = false;
+
+const passwordValidation = {
+    length: false,
+    letter: false,
+    number: false,
+    special: false,
+};
 
 //Ocultar mensajes de error al hacer click en cualquier input del formulario
-var inputs = document.getElementsByClassName("form-control");
+const inputs = document.getElementsByClassName("form-control");
 for (input of inputs)
 {
     input.addEventListener('focus', (event) => {
@@ -15,120 +34,65 @@ for (input of inputs)
     });
 }
 
-registerForm.addEventListener('submit', (event) =>
+registerForm.addEventListener('submit', async (event) =>
 {
     event.preventDefault(); // Evita el envío del formulario por defecto
 
-    //Validación campo nombre
-    var name = document.getElementById("fullname").value;
-    var nameErrorSpan = document.getElementById("name-error");
-    if (name.length == 0)
-    {
-        errors = true;
-        nameErrorSpan.innerText = "The field name can´t be empty";
-        nameErrorSpan.style.display = "block"
-    }
+    const toast = document.querySelector('#register-result-toast')
+    const toastMessage = document.querySelector('#message-register-result-toast')
 
-    //Validación campo telefono
-    var phone = document.getElementById("phone").value;
-    var phoneErrorSpan = document.getElementById("phone-error");
-    var phoneErrorMessages = '';
-    if (isNaN(phone) || phone.trim() === "")
-    {
-        errors = true;
-        phoneErrorMessages += "The field phone should contain numbers only\n";
-    }
+    toastMessage.innerHTML = ""
+    toast.classList.remove(['text-bg-danger', 'text-bg-success'])
 
-    if (phone.length < 10 || phone.length <= 0)
-    {
-        errors = true;
-        phoneErrorMessages += "The field phone should have 10 digits at least and can't be empty\n";
-    }
+    //Validación campo primer nombre
+    const firstName = document.querySelector("#first-name-register").value;
+    const lastName = document.querySelector("#last-name").value
 
-    //Mostrar los errores
-    if(phoneErrorMessages.length > 0)
-    {
-        phoneErrorSpan.innerText = phoneErrorMessages;
-        phoneErrorSpan.style.display = 'block';
-    }
-
-    //Vlidación campo correo
-    var email = document.getElementById("email").value;
-    var emailErrorSpan = document.getElementById("email-error");
-    if (!IsValidEmail(email))
-    {
-        errors = true;
-        emailErrorSpan.innerText = "The field email is not valid";
-        emailErrorSpan.style.display = "block";
-    }
+    //Validación campo correo
+    const email = document.querySelector("#email-register").value;
 
     //validación contraseña
-    var password = document.getElementById("password").value;
-    var confirmpassword = document.getElementById("confirmpassword").value;
-    var pwdErrorSpan = document.getElementById("pwd-error");
-    var pwdErrorMessages = '';
-    if (password.length == 0 || confirmpassword.length == 0)
-    {
+    const password = passwordInput.value;
+    const confirmPassword = document.querySelector("#confirm-password").value;
+    const pwdErrorSpan = document.querySelector("#pwd-error");
+    const pwdErrorMessages = '';
+
+    if (password.length == 0 || confirmPassword.length == 0) {
         errors = true;
         pwdErrorMessages += "The password's fields can´t be empty";
     }
 
-    if (confirmpassword != password)
-    {
+    if (confirmPassword != password) {
         errors = true
-        pwdErrorMessages += "The passwordś fields should be equals";
+        pwdErrorMessages += "The passwords fields should be equals";
     }
 
     //Mostrar los errores
-    if (pwdErrorMessages.length > 0)
-    {
+    if (pwdErrorMessages.length > 0) {
         pwdErrorSpan .innerText = pwdErrorMessages;
         pwdErrorSpan.style.display = "block";
     }
+    
+    const response = await registerApp({
+        firstName,
+        lastName,
+        email,
+        password
+    })
 
-    //Validacion terminos y condiciones
-    var terms = document.getElementById("terms");
-    var termsErrorSpan = document.getElementById("terms-error");
-    if(!terms.checked)
-    {
-        errors = true;
-        termsErrorSpan.innerText = "You should accept the terms and conditions";
-        termsErrorSpan.style.display = "block";
-    }
-
-    if (errors)
-    {
-        hideErrors(errors);
+    if (response.ok) {
+        toastMessage.innerHTML = "The user has been created successfully you can use the login form to login to the application"
+        toast.classList.add('text-bg-success')
+        registerForm.reset()
+        document.querySelector("#email-login").focus()
     } else {
-        var jsonFormData = {
-            "name" : name,
-            "phone": phone,
-            "email": email,
-            "password" : password
-        }
-
-        const existentData = JSON.parse(localStorage.getItem("users")) || [];
-        existentData.push(jsonFormData);
-
-        window.localStorage.setItem("users", JSON.stringify(existentData));
-        window.location.href = window.location.href.replace("register.html", "login.html");
+        toastMessage.innerHTML = `There is an error during the user registration process. ${response.message}`
+        toast.classList.add('text-bg-danger')
+        document.querySelector("#email-login").focus()
     }
+
+    showToast("register-result-toast")
 });
-
-function displaySuccess()
-{
-    var successContainer = document.getElementById("successContainer");
-    successContainer.style.display = "block";
-
-    var success = document.getElementById("success");
-    var html = '<h3>Registro Exitoso</h3>\n';
-
-    success.innerHTML = html;
-
-    setTimeout(function() {
-        successContainer.style.display = 'none';
-    }, 4000);
-}
 
 function hideErrors()
 {
@@ -141,23 +105,60 @@ function hideErrors()
     }, 4000);
 }
 
-function IsValidEmail(email) {
-    if (typeof email !== "string") return false; // Verificar que sea un string
 
-    const partes = email.split("@");
+togglePasswdVisibilityBtn.addEventListener("click", (evt) => {
+  const isOpen = evt.target.dataset.status === "open";
+  
+  if (isOpen) {
+    togglePasswdVisibilityBtn.setAttribute("data-status", "closed");
+    openEyeIcon.classList.add("hidden");
+    slashEyeIcon.classList.remove("hidden");
+    passwordInput.setAttribute("type", "text");
+    return
+  }
 
-    if (partes.length !== 2) return false; // Debe haber exactamente un '@'
+  togglePasswdVisibilityBtn.setAttribute("data-status", "open");
+  openEyeIcon.classList.remove("hidden");
+  slashEyeIcon.classList.add("hidden");
+  passwordInput.setAttribute("type", "password");
+});
 
-    const [usuario, dominio] = partes;
+passwordInput.addEventListener('input', validatePassword);
 
-    if (!usuario || !dominio) return false; // No debe haber '@' al inicio o final
+function validatePassword() {
+    const password = passwordInput.value;
 
-    const dominioPartes = dominio.split(".");
-    if (dominioPartes.length < 2) return false; // Debe haber al menos un punto en el dominio
+    // Validation checks
+    const isLengthValid = password.length >= 8;
+    const hasLetter = /[a-zA-Z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
-    const extension = dominioPartes.pop(); // Última parte después del último '.'
+    passwordValidation.length = isLengthValid;
+    passwordValidation.letter = hasLetter;
+    passwordValidation.number = hasNumber;
+    passwordValidation.special = hasSpecial;
 
-    // Verificar que usuario, dominio y extensión no estén vacíos
-    return usuario.length > 0 && dominioPartes.join(".").length > 0 && extension.length > 1;
+    // Update the validation list
+    updateValidationItem(lengthItem, isLengthValid);
+    updateValidationItem(letterItem, hasLetter);
+    updateValidationItem(numberItem, hasNumber);
+    updateValidationItem(specialItem, hasSpecial);
+
+    if (isPasswordCompletelyValid()) {
+        registerBtn.removeAttribute("disabled");
+    } else {
+        registerBtn.setAttribute("disabled", "true");
+    }
 }
 
+function updateValidationItem(item, isValid) {
+    item.classList.remove("valid-password-rule")
+    if (isValid) {
+        item.classList.add("valid-password-rule");
+    }
+}
+
+function isPasswordCompletelyValid() {
+    return passwordValidation.length && passwordValidation.letter && passwordValidation.number && passwordValidation.special;
+}

@@ -992,3 +992,68 @@ function hideToast(id) {
   const toast = new bootstrap.Toast(toastEl)
   toast.hide()
 }
+
+function getQueryParameterFromURL(id) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(id) ? params.get(id).toLowerCase() : null;
+}
+
+(() => {
+  const userToken = sessionStorage.getItem("user-token");
+  const loggedInUserItems = document.querySelectorAll("li.logged-user-item")
+  const guessUserItems = document.querySelectorAll("li.guess-user-item")
+  
+  const { pathname } = window.location;
+
+  if (!userToken) { // Usuario NO logueado
+    loggedInUserItems.forEach(item => item.setAttribute("style", "display: none;"))
+    if (pathname === "/checkout.html" || pathname === "/my-profile.html") {
+      window.location.href = `/login.html?redirect=${pathname}`
+    }
+  } else { // Usuario ya esta logueado
+    if (pathname === "/login.html" || pathname === "/register.html") {
+      window.location.href = "/index.html"
+    }
+    guessUserItems.forEach(item => item.setAttribute("style", "display: none;"))
+  }
+})()
+
+function logout() {
+  localStorage.clear()
+  sessionStorage.clear()
+
+  window.location.href = "/login.html"
+}
+
+function formToJson(formId) {
+  const form = document.getElementById(formId);
+  if (!form) {
+    console.error(`Form with ID '${formId}' not found.`);
+    return null;
+  }
+
+  const formData = {};
+  const elements = form.querySelectorAll('input, select, textarea');
+
+  elements.forEach(element => {
+    const name = element.name;
+    if (name) {
+      if (element.type === 'radio') {
+        if (element.checked) {
+          formData[name] = element.value;
+        }
+      } else if (element.type === 'checkbox') {
+        if (!formData[name]) {
+          formData[name] = [];
+        }
+        if (element.checked) {
+          formData[name].push(element.value);
+        }
+      } else {
+        formData[name] = element.value;
+      }
+    }
+  });
+
+  return formData;
+}

@@ -1,8 +1,7 @@
 let json
 
-fetch('assets/js/data/products.json')
-    .then(response => response.text())
-    .then(text => renderProducts(JSON.parse(text)))
+getAllProducts()
+    .then(products => renderProducts(products))
     .catch(error => console.error('Error cargando el archivo JSON:', error))
 
 function getCategoryFromURL() {
@@ -13,14 +12,19 @@ function getCategoryFromURL() {
 function toggleShowAllButton()
 {
     const categoryParam = getCategoryFromURL();
-    const button = document.getElementById("showAllCategories");
+    const breadcrumb = document.querySelector("#breadcrumb");
 
-    if (!button) return;
+    if (!breadcrumb) return;
 
     if (categoryParam) {
-        button.style.display = "block"; // Mostrar botón para ver todos los productos si hay una categoría en la URL
-    } else {
-        button.style.display = "none"; // Ocultar botón para ver todos los productos si no hay filtro aplicado
+        const lastBreadcrumb = breadcrumb.querySelector("li:last-child");
+        lastBreadcrumb.innerHTML = "<a href='products.html'>Products</a>";
+
+        const categoryLabel = document.createElement("li");
+        categoryLabel.classList.add("breadcrumb__content--menu__items");
+        categoryLabel.innerHTML = `<span>${categoryParam[0].toLocaleUpperCase() + categoryParam.slice(1)}</span>`;
+
+        breadcrumb.appendChild(categoryLabel)
     }
 }
 
@@ -38,7 +42,18 @@ function renderProducts (data)
 
     const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || [];
     const categoryParam = getCategoryFromURL();
-    const filteredProducts = categoryParam ? data.filter(product => product.category.toLowerCase() === categoryParam) : data;
+    const filteredProducts = categoryParam ? data.filter(product => product.categories.map((category) => category.toLowerCase()).includes(categoryParam)) : data;
+
+    if (filteredProducts.length === 0) {
+        productsHtml = `
+            <div style="height: 60vh;">
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    
+                    <div>Oops! There are no products found ${categoryParam ? "for the selected category, try with another one." : "."}</div>
+                </div>
+            </div>
+        `
+    }
 
     for (var i = 0; i < filteredProducts.length; i++)
     {

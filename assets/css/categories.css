@@ -193,7 +193,13 @@
 }
 
 .category-title {
-    color: var(--foreground-color) !important
-;
+    color: var(--foreground-color) !important;
+}
 
+#categories .loading, #banner-influencers .loading {
+    min-height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
