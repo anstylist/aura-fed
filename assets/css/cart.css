@@ -74,9 +74,9 @@
 
 .offcanvas__sticky--toolbar__label {
   display: block;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 .offcanvas__sticky--toolbar .items__count {
