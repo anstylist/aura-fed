@@ -992,3 +992,35 @@ function hideToast(id) {
   const toast = new bootstrap.Toast(toastEl)
   toast.hide()
 }
+
+function getQueryParameterFromURL(id) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(id) ? params.get(id).toLowerCase() : null;
+}
+
+(() => {
+  const userToken = sessionStorage.getItem("user-token");
+  const loggedInUserItems = document.querySelectorAll("li.logged-user-item")
+  const guessUserItems = document.querySelectorAll("li.guess-user-item")
+  
+  const { pathname } = window.location;
+
+  if (!userToken) { // Usuario NO logueado
+    loggedInUserItems.forEach(item => item.setAttribute("style", "display: none;"))
+    if (pathname === "/checkout.html" || pathname === "/my-profile.html") {
+      window.location.href = `/login.html?redirect=${pathname}`
+    }
+  } else { // Usuario ya esta logueado
+    if (pathname === "/login.html" || pathname === "/register.html") {
+      window.location.href = "/index.html"
+    }
+    guessUserItems.forEach(item => item.setAttribute("style", "display: none;"))
+  }
+})()
+
+function logout() {
+  localStorage.clear()
+  sessionStorage.clear()
+
+  window.location.href = "/login.html"
+}

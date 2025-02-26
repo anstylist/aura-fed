@@ -165,22 +165,42 @@
                                 </a>
                             </li>
 
-                            <li class="header__account--items">
-                                <a class="header__account--btn d-sm-2-none text-white" href="#">
-                                    <span class="header__account--btn__icon">
-                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M16 16V14.3333C16 13.4493 15.6049 12.6014 14.9016 11.9763C14.1984 11.3512 13.2446 11 12.25 11H4.75C3.75544 11 2.80161 11.3512 2.09835 11.9763C1.39509 12.6014 1 13.4493 1 14.3333V16"
-                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path
-                                                d="M8.5 7.66667C10.5711 7.66667 12.25 6.17428 12.25 4.33333C12.25 2.49238 10.5711 1 8.5 1C6.42893 1 4.75 2.49238 4.75 4.33333C4.75 6.17428 6.42893 7.66667 8.5 7.66667Z"
-                                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                    <span class="visually-hidden">My Account</span>
+                            <li class="header__account--items logged-user-item">
+                                <a class="header__account--btn d-sm-2-none text-white" href="my-profile.html">
+                                        <span class="header__account--btn__icon">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16 16V14.3333C16 13.4493 15.6049 12.6014 14.9016 11.9763C14.1984 11.3512 13.2446 11 12.25 11H4.75C3.75544 11 2.80161 11.3512 2.09835 11.9763C1.39509 12.6014 1 13.4493 1 14.3333V16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.5 7.66667C10.5711 7.66667 12.25 6.17428 12.25 4.33333C12.25 2.49238 10.5711 1 8.5 1C6.42893 1 4.75 2.49238 4.75 4.33333C4.75 6.17428 6.42893 7.66667 8.5 7.66667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    <span class="visually-hidden">My Orders</span>
                                 </a>
                             </li>
+    
+                            <li class="header__account--items logged-user-item">
+                                <a class="header__account--btn d-sm-2-none text-white" href="javascript:logout()">
+                                        <span class="header__account--btn__icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 17 17">
+                                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                              </svg>
+                                        </span>
+                                    <span class="visually-hidden">Logout</span>
+                                </a>
+                            </li>
+    
+                            <li class="header__account--items guess-user-item">
+                                <a class="header__account--btn d-sm-2-none text-white" href="login.html">
+                                        <span class="header__account--btn__icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key" viewBox="0 0 17 17">
+                                                <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/>
+                                                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                              </svg>
+                                        </span>
+                                    <span class="visually-hidden">Sign In / Register</span>
+                                </a>
+                            </li>
+
                             <li class="header__account--items header__minicart--items">
                                 <button class="header__account--btn minicart__open--btn text-white" data-offcanvas>
                                     <span class="header__account--btn__icon">
@@ -283,21 +303,7 @@
                             </span>
                             <span class="offcanvas__account--items__label">Login</span>
                         </a>
-                        <a class="offcanvas__account--items__btn d-flex align-items-center" href="./register.html">
-                            <span class="offcanvas__account--items__icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20.51" height="19.443"
-                                    viewBox="0 0 512 512">
-                                    <path
-                                        d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z"
-                                        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="32" />
-                                    <path
-                                        d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z"
-                                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-                                </svg>
-                            </span>
-                            <span>Register</span>
-                        </a>
+                        
                     </div>
                 </nav>
             </div>
@@ -433,21 +439,6 @@
     <!--------------- MAIN SECTION ------------------>
     <!-- Start products section -->
     <section>
-        <div class="container mt-5">
-            <div class="row row-col-1 justify-content-center">
-                <div class="col">
-                    <nav>
-                        <ul>
-                            <li>
-                                <a id="showAllCategories" class="products-title" href="./products.html">
-                                    All Products
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
         <div class="container mt-3 mb-5">
             <div class="row main-products-list" id="products"></div>
         </div>
@@ -543,7 +534,7 @@
                                     <a class="footer__widget--menu__text" href="cart.html">Shopping Cart</a>
                                 </li>
                                 <li class="footer__widget--menu__list">
-                                    <a class="footer__widget--menu__text" href="login.html">Login</a>
+                                    <a class="footer__widget--menu__text" href="login.html">Login - Register</a>
                                 </li>
                             </ul>
                         </div>
@@ -679,6 +670,8 @@
 
     <!-- Customscript js -->
     <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/services/config.js"></script>
+    <script src="/assets/js/services/products-service.js"></script>
     <script src="/assets/js/products.js"></script>
     <script src="/assets/js/cart.js"></script>
 

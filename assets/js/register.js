@@ -15,112 +15,72 @@ for (input of inputs)
     });
 }
 
-registerForm.addEventListener('submit', (event) =>
+registerForm.addEventListener('submit', async (event) =>
 {
     event.preventDefault(); // Evita el envío del formulario por defecto
 
-    //Validación campo nombre
-    var name = document.getElementById("fullname").value;
-    var nameErrorSpan = document.getElementById("name-error");
-    if (name.length == 0)
-    {
-        errors = true;
-        nameErrorSpan.innerText = "The field name can´t be empty";
-        nameErrorSpan.style.display = "block"
-    }
+    const toast = document.querySelector('#register-result-toast')
+    const toastMessage = document.querySelector('#message-register-result-toast')
 
-    //Validación campo telefono
-    var phone = document.getElementById("phone").value;
-    var phoneErrorSpan = document.getElementById("phone-error");
-    var phoneErrorMessages = '';
-    if (isNaN(phone) || phone.trim() === "")
-    {
-        errors = true;
-        phoneErrorMessages += "The field phone should contain numbers only\n";
-    }
+    toastMessage.innerHTML = ""
+    toast.classList.remove(['text-bg-danger', 'text-bg-success'])
 
-    if (phone.length < 10 || phone.length <= 0)
-    {
-        errors = true;
-        phoneErrorMessages += "The field phone should have 10 digits at least and can't be empty\n";
-    }
+    //Validación campo primer nombre
+    const firstName = document.querySelector("#first-name-register").value;
+    const lastName = document.querySelector("#last-name").value
 
-    //Mostrar los errores
-    if(phoneErrorMessages.length > 0)
-    {
-        phoneErrorSpan.innerText = phoneErrorMessages;
-        phoneErrorSpan.style.display = 'block';
-    }
-
-    //Vlidación campo correo
-    var email = document.getElementById("email").value;
-    var emailErrorSpan = document.getElementById("email-error");
-    if (!IsValidEmail(email))
-    {
-        errors = true;
-        emailErrorSpan.innerText = "The field email is not valid";
-        emailErrorSpan.style.display = "block";
-    }
+    //Validación campo correo
+    const email = document.querySelector("#email-register").value;
 
     //validación contraseña
-    var password = document.getElementById("password").value;
-    var confirmpassword = document.getElementById("confirmpassword").value;
-    var pwdErrorSpan = document.getElementById("pwd-error");
-    var pwdErrorMessages = '';
-    if (password.length == 0 || confirmpassword.length == 0)
-    {
+    const password = document.querySelector("#password-register").value;
+    const confirmPassword = document.querySelector("#confirm-password").value;
+    const pwdErrorSpan = document.querySelector("#pwd-error");
+    const pwdErrorMessages = '';
+
+    if (password.length == 0 || confirmPassword.length == 0) {
         errors = true;
         pwdErrorMessages += "The password's fields can´t be empty";
     }
 
-    if (confirmpassword != password)
-    {
+    if (confirmPassword != password) {
         errors = true
-        pwdErrorMessages += "The passwordś fields should be equals";
+        pwdErrorMessages += "The passwords fields should be equals";
     }
 
     //Mostrar los errores
-    if (pwdErrorMessages.length > 0)
-    {
+    if (pwdErrorMessages.length > 0) {
         pwdErrorSpan .innerText = pwdErrorMessages;
         pwdErrorSpan.style.display = "block";
     }
+    
+    const response = await registerApp({
+        firstName,
+        lastName,
+        email,
+        password
+    })
 
-    //Validacion terminos y condiciones
-    var terms = document.getElementById("terms");
-    var termsErrorSpan = document.getElementById("terms-error");
-    if(!terms.checked)
-    {
-        errors = true;
-        termsErrorSpan.innerText = "You should accept the terms and conditions";
-        termsErrorSpan.style.display = "block";
-    }
-
-    if (errors)
-    {
-        hideErrors(errors);
+    if (response.ok) {
+        toastMessage.innerHTML = "The user has been created successfully you can use the login form to login to the application"
+        toast.classList.add('text-bg-success')
+        registerForm.reset()
+        document.querySelector("#email-login").focus()
     } else {
-        var jsonFormData = {
-            "name" : name,
-            "phone": phone,
-            "email": email,
-            "password" : password
-        }
-
-        const existentData = JSON.parse(localStorage.getItem("users")) || [];
-        existentData.push(jsonFormData);
-
-        window.localStorage.setItem("users", JSON.stringify(existentData));
-        window.location.href = window.location.href.replace("register.html", "login.html");
+        toastMessage.innerHTML = `There is an error during the user registration process. ${response.message}`
+        toast.classList.add('text-bg-danger')
+        document.querySelector("#email-login").focus()
     }
+
+    showToast("register-result-toast")
 });
 
 function displaySuccess()
 {
-    var successContainer = document.getElementById("successContainer");
+    var successContainer = document.querySelector("#successContainer");
     successContainer.style.display = "block";
 
-    var success = document.getElementById("success");
+    var success = document.querySelector("#success");
     var html = '<h3>Registro Exitoso</h3>\n';
 
     success.innerHTML = html;
@@ -160,4 +120,5 @@ function IsValidEmail(email) {
     // Verificar que usuario, dominio y extensión no estén vacíos
     return usuario.length > 0 && dominioPartes.join(".").length > 0 && extension.length > 1;
 }
+
 

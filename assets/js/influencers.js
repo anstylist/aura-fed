@@ -1,28 +1,33 @@
-fetch('/assets/js/data/products.json')
-  .then(response => response.text())
-  .then(text => renderInfluencer(JSON.parse(text).filter(product => product.influencer)))
+getAllCampaigns()
+  .then(campaigns => renderInfluencer(campaigns))
   .catch(error => console.error('Error cargando el archivo JSON:', error))
 
 /**
  * It renders all the products in the page as a grid/list
  * 
- * @param {Product} data Products list
+ * @param {Campaign[]} data Campaigns List
 */
-function renderInfluencer (data) {
-  let productsRow = document.getElementById('banner-influencers')
-  let productsHtml = ''
+function renderInfluencer(data) {
+  let influencersRow = document.getElementById('banner-influencers')
+  let campaignsHtml = ''
 
   const productsInCart = JSON.parse(localStorage.getItem('productsInCart')) || []
 
   for (var i = 0; i < data.length; i++) {
-    const product = data[i]
+    const campaign = data[i]
+    const product = campaign.product;
+    const influencer = campaign.influencer;
     const qtyInCart = productsInCart.find(item => item?.id === product.id)?.qty || 0
     const actualStock = product.stock-qtyInCart
     const lastUnits = actualStock > 0 && actualStock <= 10
-    productsHtml += `
+
+    console.log("--- AC - CAMPAIGN: ", { i, campaign, product });
+    
+
+    campaignsHtml += `
       <div class="banner-box">
-        <img class="img-card main" src="${product.influencer.images[0]}" alt="${product.name} Influencer Image" />
-        <img class="img-card hover" src="${product.influencer.images[1]}" alt="${product.name} Influencer Image" />
+        <img class="img-card main" src="${campaign.imageUrl}" alt="${product.name} Influencer Image" />
+        <img class="img-card hover" src="${campaign.imageHoverUrl}" alt="${product.name} Influencer Image" />
         <button type="button" class="btn-influencers" data-bs-toggle="modal" data-bs-target="#influencers-modal-${i}">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle play-icon" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -36,13 +41,13 @@ function renderInfluencer (data) {
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body modal-container-influencers">
-                <video id="my-video-${i}" src="${product.influencer.video}" volume="0.1" controls></video>
+                <video id="my-video-${i}" src="${campaign.videoUrl}" volume="0.1" controls></video>
                 <div class="col-md-4">
                   <div class="card card-influencer">
                     <img
                       src="${product.img}"
                       class="card-img-top"
-                      alt=""
+                      alt="${product.name} Image"
                     />
                     <div class="card-body card-body-influencers">
                       <h5 class="card-title">${product.name}</h5>
@@ -74,7 +79,7 @@ function renderInfluencer (data) {
   
 
   // esta linea indica que ya los productos estan renderizados
-  productsRow.innerHTML = productsHtml
+  influencersRow.innerHTML = campaignsHtml
 
   setInfluencersModalsBehavior()
 
