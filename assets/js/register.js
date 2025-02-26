@@ -1,8 +1,27 @@
 const registerForm = document.querySelector('#register-form');
-var errors = false;
+const togglePasswdVisibilityBtn = document.querySelector("#show-password__btn");
+const slashEyeIcon = document.querySelector("#slash-eye-icon");
+const openEyeIcon = document.querySelector("#open-eye-icon");
+const passwordInput = document.querySelector("#password-register");
+const registerBtn = document.querySelector("#register-btn");
+
+const validationList = document.getElementById('validationList');
+const lengthItem = document.getElementById('length');
+const letterItem = document.getElementById('letter');
+const numberItem = document.getElementById('number');
+const specialItem = document.getElementById('special');
+
+let errors = false;
+
+const passwordValidation = {
+    length: false,
+    letter: false,
+    number: false,
+    special: false,
+};
 
 //Ocultar mensajes de error al hacer click en cualquier input del formulario
-var inputs = document.getElementsByClassName("form-control");
+const inputs = document.getElementsByClassName("form-control");
 for (input of inputs)
 {
     input.addEventListener('focus', (event) => {
@@ -33,7 +52,7 @@ registerForm.addEventListener('submit', async (event) =>
     const email = document.querySelector("#email-register").value;
 
     //validación contraseña
-    const password = document.querySelector("#password-register").value;
+    const password = passwordInput.value;
     const confirmPassword = document.querySelector("#confirm-password").value;
     const pwdErrorSpan = document.querySelector("#pwd-error");
     const pwdErrorMessages = '';
@@ -75,21 +94,6 @@ registerForm.addEventListener('submit', async (event) =>
     showToast("register-result-toast")
 });
 
-function displaySuccess()
-{
-    var successContainer = document.querySelector("#successContainer");
-    successContainer.style.display = "block";
-
-    var success = document.querySelector("#success");
-    var html = '<h3>Registro Exitoso</h3>\n';
-
-    success.innerHTML = html;
-
-    setTimeout(function() {
-        successContainer.style.display = 'none';
-    }, 4000);
-}
-
 function hideErrors()
 {
     var errorSpans = document.getElementsByClassName("text-danger");
@@ -101,24 +105,60 @@ function hideErrors()
     }, 4000);
 }
 
-function IsValidEmail(email) {
-    if (typeof email !== "string") return false; // Verificar que sea un string
 
-    const partes = email.split("@");
+togglePasswdVisibilityBtn.addEventListener("click", (evt) => {
+  const isOpen = evt.target.dataset.status === "open";
+  
+  if (isOpen) {
+    togglePasswdVisibilityBtn.setAttribute("data-status", "closed");
+    openEyeIcon.classList.add("hidden");
+    slashEyeIcon.classList.remove("hidden");
+    passwordInput.setAttribute("type", "text");
+    return
+  }
 
-    if (partes.length !== 2) return false; // Debe haber exactamente un '@'
+  togglePasswdVisibilityBtn.setAttribute("data-status", "open");
+  openEyeIcon.classList.remove("hidden");
+  slashEyeIcon.classList.add("hidden");
+  passwordInput.setAttribute("type", "password");
+});
 
-    const [usuario, dominio] = partes;
+passwordInput.addEventListener('input', validatePassword);
 
-    if (!usuario || !dominio) return false; // No debe haber '@' al inicio o final
+function validatePassword() {
+    const password = passwordInput.value;
 
-    const dominioPartes = dominio.split(".");
-    if (dominioPartes.length < 2) return false; // Debe haber al menos un punto en el dominio
+    // Validation checks
+    const isLengthValid = password.length >= 8;
+    const hasLetter = /[a-zA-Z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
-    const extension = dominioPartes.pop(); // Última parte después del último '.'
+    passwordValidation.length = isLengthValid;
+    passwordValidation.letter = hasLetter;
+    passwordValidation.number = hasNumber;
+    passwordValidation.special = hasSpecial;
 
-    // Verificar que usuario, dominio y extensión no estén vacíos
-    return usuario.length > 0 && dominioPartes.join(".").length > 0 && extension.length > 1;
+    // Update the validation list
+    updateValidationItem(lengthItem, isLengthValid);
+    updateValidationItem(letterItem, hasLetter);
+    updateValidationItem(numberItem, hasNumber);
+    updateValidationItem(specialItem, hasSpecial);
+
+    if (isPasswordCompletelyValid()) {
+        registerBtn.removeAttribute("disabled");
+    } else {
+        registerBtn.setAttribute("disabled", "true");
+    }
 }
 
+function updateValidationItem(item, isValid) {
+    item.classList.remove("valid-password-rule")
+    if (isValid) {
+        item.classList.add("valid-password-rule");
+    }
+}
 
+function isPasswordCompletelyValid() {
+    return passwordValidation.length && passwordValidation.letter && passwordValidation.number && passwordValidation.special;
+}

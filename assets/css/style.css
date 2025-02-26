@@ -11735,5 +11735,38 @@ input[type=range]::-moz-range-track {
   margin-bottom: 2.5rem;
   margin-top: 2.5rem;
   text-align: center;
+}
 
+.account__login--input.input-group {
+  padding: 0;
+}
+
+.account__login--input.input-group:focus-within {
+  border-color: var(--au-green);
+  box-shadow: 0 0 0 .25rem var(--au-green-shadow);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  outline: 0;
+}
+
+.input-group__item {
+  flex: 1;
+  padding-left: 0.5rem;
+}
+
+.input-group__item:focus {
+  box-shadow: none;
+}
+
+.hidden {
+  display: none;
+}
+
+button svg {
+  pointer-events: none;
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+  background-color: var(--au-purple-opacity);
+  border-color: var(--au-purple-opacity);
 }

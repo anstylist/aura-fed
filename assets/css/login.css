@@ -228,3 +228,45 @@
   background-color: var(--au-purple-opacity);
   border-color: var(--au-purple-opacity)
 }
+
+.password-rules__list {
+  list-style-type: disc;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 2rem;
+}
+
+.password-rule {
+  opacity: 0.6;
+  color: var(--au-black);
+  list-style-type: circle;
+}
+
+.password-rule.valid-password-rule {
+  opacity: 1;
+  color: var(--au-green);
+  font-weight: bold;
+  list-style-type: disc;
+}
+
+#show-password__btn {
+  background-color: var(--au-green);
+  border-color: var(--au-green);
+}
+
+.form.login-register-group-form {
+  transition: all 0.3s ease-in-out;
+}
+
+form.login-register-group-form:focus-within,
+form.login-register-group-form:hover {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+form.login-register-group-form:not(:focus-within):not(:hover) {
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}

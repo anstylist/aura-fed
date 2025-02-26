@@ -33,3 +33,11 @@ async function validateLogin(email, password) {
 
   showToast("login-result-toast")
 }
+
+(() => {
+  document.querySelector('#email-login').focus();
+  const redirectTo = getQueryParameterFromURL("redirect")
+  if (redirectTo) {
+    showToast("login-required-toast")
+  }
+})()
