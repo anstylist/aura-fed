@@ -43,8 +43,7 @@ jobs:
           path: '.'
       - name: Copy assets to root
         run: |
-          mkdir -p public/assets
-          cp -r assets/* public/assets/
+          cp -r assets/* ../assets/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
