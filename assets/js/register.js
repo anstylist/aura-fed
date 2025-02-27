@@ -53,25 +53,6 @@ registerForm.addEventListener('submit', async (event) =>
 
     //validación contraseña
     const password = passwordInput.value;
-    const confirmPassword = document.querySelector("#confirm-password").value;
-    const pwdErrorSpan = document.querySelector("#pwd-error");
-    const pwdErrorMessages = '';
-
-    if (password.length == 0 || confirmPassword.length == 0) {
-        errors = true;
-        pwdErrorMessages += "The password's fields can´t be empty";
-    }
-
-    if (confirmPassword != password) {
-        errors = true
-        pwdErrorMessages += "The passwords fields should be equals";
-    }
-
-    //Mostrar los errores
-    if (pwdErrorMessages.length > 0) {
-        pwdErrorSpan .innerText = pwdErrorMessages;
-        pwdErrorSpan.style.display = "block";
-    }
     
     const response = await registerApp({
         firstName,
